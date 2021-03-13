@@ -1,58 +1,186 @@
-<template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
-  </div>
-</template>
-
 <script>
-export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
+    export default {
+        name: 'HelloWorld',
+
+        data () {
+            return {
+                items: [
+                    {
+                        src: 'https://sun9-74.userapi.com/impf/e_2iJ3cFyVqUrSpRAbJYQSQzSy7lObINcyRV4A/BXulRkg-H6E.jpg?size=1620x2160&quality=96&sign=19960dff0519831b30fbbb38cd324097&type=album',
+                    },
+                    {
+                        src: 'https://sun9-76.userapi.com/impf/SH_7k-NhEJOedCgiJN8XXj5AXECd3c2cUWd1yw/GtrW2KHOdJo.jpg?size=960x1280&quality=96&sign=6fd5e5cb1c546055265b65c598090d5a&type=album',
+                    },
+                    {
+                        src: 'https://sun9-45.userapi.com/impf/TWInnZv7pa6oqLb4oi6NEZImT8NBwYtyl4CBuQ/Kf1OL8QtqJE.jpg?size=2560x1920&quality=96&sign=bd8ff0c67a78270ef41d6ae8e4fedd0b&type=album',
+                    },
+                    {
+                        src: 'https://sun9-32.userapi.com/impf/suxRsIk_8_uLh4uUyelaBIKxhJg6ixNwKR7WWQ/p1EWB-q14N8.jpg?size=1620x2160&quality=96&sign=31889a9087a8c65a39341ad62e16d6bc&type=album',
+                    },
+                    {
+                        src: 'https://sun9-57.userapi.com/impf/0Irbti5NXdSguXWr_a8RdEisqvZj_XxSdQgNLg/LrT2J-uDUW4.jpg?size=1024x768&quality=96&sign=450247ef71845da051b0f444192ba5b4&type=album',
+                    },
+                    {
+                        src: 'https://sun9-10.userapi.com/impf/33QeLQXiSkCGHnXxFK3F3Zab1TWGD9K0HTPdvg/CGHquEzWZIw.jpg?size=2560x1920&quality=96&sign=7af8fa6f8700b2277d05f85f8b447962&type=album',
+                    },
+                ]
+            }
+        },
+
+        mounted() {
+            //this.scroll();
+        },
+
+        watch: {
+
+        },
+
+        methods: {
+            handleScroll: function () {
+                const el = document.getElementById("roadmap");
+                //const height = document.documentElement.clientHeight;
+                if (window.scrollY > 700) {
+                    el.setAttribute(
+                        'style',
+                        'opacity: 1;visibility: visible;'
+                    );
+                    this.scroll();
+                }
+                return window.scrollY > 100
+            },
+            scroll() {
+                // set height of the svg path as constant
+                const svg = document.getElementById("svgPath");
+                const length = svg.getTotalLength();
+
+// start positioning of svg drawing
+                svg.style.strokeDasharray = length;
+
+// hide svg before scrolling starts
+                svg.style.strokeDashoffset = length;
+
+                    window.addEventListener("scroll", function () {
+                        const scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+                        let draw;
+                        const scrollY = window.scrollY;
+
+                        switch (true){
+
+                            case scrollY < 1200:
+                                draw = length * (scrollpercent - 0.12);
+                                break;
+                            case scrollY >= 1200 && scrollY <= 1300:
+                                draw = length * (scrollpercent - 0.09);
+                                break;
+                            case  scrollY >= 1300 && scrollY <= 1400:
+                                draw = length * (scrollpercent - 0.06);
+                                break;
+                            case  scrollY >= 1400 && scrollY <= 1500:
+                                draw = length * (scrollpercent - 0.03);
+                                break;
+                            case scrollY >= 1500 && scrollY <= 1700:
+                                draw = length * (scrollpercent);
+                                break;
+                            case scrollY >= 1700 && scrollY <= 1900:
+                                draw = length * (scrollpercent + 0.04);
+                                break;
+                            case scrollY >= 1900 && scrollY <= 2100:
+                                draw = length * (scrollpercent + 0.08);
+                                break;
+
+                            case /* myInterval >= 6 && */ scrollY >= 2100:
+                                draw = length * (scrollpercent + 0.1);
+                                break;
+
+                            default:
+                                draw = length * (scrollpercent);
+                        }
+
+                       /*if ( scrollY < 1200 ) {
+                            draw = length * (scrollpercent - 0.12);
+                        } else if (1200 < scrollY < 1800) {
+                            draw = length * (scrollpercent);
+                        } else if (1800 < scrollY < 2800) {
+                            draw = length * (scrollpercent + 1);
+                        }*/
+
+                        //draw = length * (scrollpercent);
+
+                        // Reverse the drawing when scroll upwards
+                        svg.style.strokeDashoffset = length - draw;
+                    });
+                }
+
+        }
+    }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<template>
+  <v-container class="pt-48">
+      <section class="flex flex-row align-middle wrapper">
+        <h1 class="text-center font-weight-light m-auto w-1/2 align-middle" style="font-size: 72px;color:#6B483C; background-color: transparent!important;">
+          Денис<br>
+            &<br>
+            Диана
+        </h1>
+          <v-carousel
+                  class="w-1/2 rounded-2xl"
+                      cycle
+                      height="640"
+                      hide-delimiter-background
+                      show-arrows-on-hover
+              >
+                      <v-carousel-item
+                              v-for="(item,i) in items"
+                              :key="i"
+                              :src="item.src"
+                      ></v-carousel-item>
+              </v-carousel>
+      </section>
+      <section class="flex flex-row align-middle pt-24 wrapper">
+          <h2 class="text-5xl text-center font-weight-light m-auto" style="color:#6B483C">
+              Немного из истории
+          </h2>
+      </section>
+      <section class="flex flex-column align-middle pt-24">
+          <p class="text-5xl text-center w-4/12 font-weight-light text-white">
+              Церковь ⛪️<br>
+              Рэу им. Плеханова
+          </p>
+          <div v-scroll="handleScroll" class="container" style="height: 1000px; visibility: hidden;" id="roadmap">
+              <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
+              </svg>
+              <div class="draw-line-height flex flex-row justify-center">
+                  <svg width="357" height="3130"><path id="svgPath" stroke="#D0B39F" stroke-width="4px" stroke-dasharray="20, 10" fill="none" d="M268,106C293.6990093311958,156.98197064989517,319.39801866239156,207.96394129979035,282,250C244.6019813376084,292.03605870020965,144.10693468162947,325.1262054507337,89,388C33.89306531837054,450.8737945492663,24.174242611090563,543.5312368972745,18,666C11.82575738890944,788.4687631027255,9.196094874008299,940.7488469601676,13,1056C16.8039051259917,1171.2511530398324,27.04137789287624,1249.4733752620546,71,1351C114.95862210712376,1452.5266247379454,192.6383935544868,1577.3576519916141,242,1659C291.3616064455132,1740.6423480083859,312.40504788917667,1779.0960167714886,268,1879C223.59495211082336,1978.9039832285114,113.74141488880667,2140.258280922432,88,2337C62.25858511119333,2533.741719077568,120.62929255559666,2765.8708595387843,179,2998"></path>
+                      <path id="" class="narmol" stroke="#000" stroke-width="6px" stroke-dasharray="20" fill="none" d="M268,106C293.6990093311958,156.98197064989517,319.39801866239156,207.96394129979035,282,250C244.6019813376084,292.03605870020965,144.10693468162947,325.1262054507337,89,388C33.89306531837054,450.8737945492663,24.174242611090563,543.5312368972745,18,666C11.82575738890944,788.4687631027255,9.196094874008299,940.7488469601676,13,1056C16.8039051259917,1171.2511530398324,27.04137789287624,1249.4733752620546,71,1351C114.95862210712376,1452.5266247379454,192.6383935544868,1577.3576519916141,242,1659C291.3616064455132,1740.6423480083859,312.40504788917667,1779.0960167714886,268,1879C223.59495211082336,1978.9039832285114,113.74141488880667,2140.258280922432,88,2337C62.25858511119333,2533.741719077568,120.62929255559666,2765.8708595387843,179,2998" ></path>
+                  </svg>
+              </div>
+          </div>
+      </section>
+      <section class="flex flex-row justify-center align-middle pt-24">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf3FGt15vUyQ4oBezCNLttmf664_YNryVzzjAeBg9QC-PHN1g/viewform?embedded=true" width="640" height="1296" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
+      </section>
+  </v-container>
+</template>
+
+<style scoped="scss" >
+
+    body {
+        font-family: 'arial', sans-serif;
+    }
+
+    .wrapper {
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+
+    .container {
+        min-height: 800px;
+        text-align: center;
+    }
+
+    svg {
+        transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
 </style>
