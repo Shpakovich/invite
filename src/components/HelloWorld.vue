@@ -45,6 +45,7 @@
                         'opacity: 1;visibility: visible;'
                     );
                     this.scroll();
+                    this.scroll1();
                 }
                 return window.scrollY > 100
             },
@@ -65,7 +66,6 @@
                         const scrollY = window.scrollY;
 
                         switch (true){
-
                             case scrollY < 1200:
                                 draw = length * (scrollpercent - 0.12);
                                 break;
@@ -81,15 +81,20 @@
                             case scrollY >= 1500 && scrollY <= 1700:
                                 draw = length * (scrollpercent);
                                 break;
-                            case scrollY >= 1700 && scrollY <= 1900:
+                            case scrollY >= 1700 && scrollY <= 1800:
                                 draw = length * (scrollpercent + 0.04);
                                 break;
-                            case scrollY >= 1900 && scrollY <= 2100:
+                            case scrollY >= 1800 && scrollY <= 1900:
                                 draw = length * (scrollpercent + 0.08);
                                 break;
-
-                            case /* myInterval >= 6 && */ scrollY >= 2100:
+                            case scrollY >= 1900 && scrollY <= 2300:
                                 draw = length * (scrollpercent + 0.1);
+                                break;
+                            case scrollY >= 2300 && scrollY <= 3100:
+                                draw = length * (scrollpercent + 0.15);
+                                break;
+                            case /* myInterval >= 6 && */ scrollY >= 3100:
+                                draw = length * (scrollpercent + 0.2);
                                 break;
 
                             default:
@@ -110,7 +115,6 @@
                         svg.style.strokeDashoffset = length - draw;
                     });
                 }
-
         }
     }
 </script>
@@ -142,18 +146,33 @@
               Немного из истории
           </h2>
       </section>
-      <section class="flex flex-column align-middle pt-24">
-          <p class="text-5xl text-center w-4/12 font-weight-light text-white">
-              Церковь ⛪️<br>
-              Рэу им. Плеханова
-          </p>
-          <div v-scroll="handleScroll" class="container" style="height: 1000px; visibility: hidden;" id="roadmap">
-              <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <section class="flex flex-column justify-center align-middle pt-24 relative">
+          <div style="padding-left: 130px;" >
+              <p class="text-5xl m-auto text-center w-4/12 font-weight-light text-white" id="event1">
+                  Церковь ⛪️<br>
+                  Рэу им. Плеханова
+              </p>
+              <p class="text-3xl m-auto text-center font-weight-light italic text-white">1 Сенября</p>
+              <svg class="m-auto" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
               </svg>
-              <div class="draw-line-height flex flex-row justify-center">
+          </div>
+          <div class="absolute" style="padding-left: 130px; top: 550px" >
+              <p class="text-5xl text-center font-weight-light text-white z-10" id="event2">
+                  Дата<br>
+                  начала отношений 👩‍❤️‍👨
+              </p>
+              <div class="relative">
+                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">5 Ноября</p>
+                  <svg class="absolute z-10" style="left: 466px; top: -20px" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
+                  </svg>
+              </div>
+          </div>
+          <div v-scroll="handleScroll" class="container flex flex-row justify-center" style="visibility: hidden;" id="roadmap">
+              <div style="margin-top: -120px" class="draw-line-height relative">
                   <svg width="357" height="3130"><path id="svgPath" stroke="#D0B39F" stroke-width="4px" stroke-dasharray="20, 10" fill="none" d="M268,106C293.6990093311958,156.98197064989517,319.39801866239156,207.96394129979035,282,250C244.6019813376084,292.03605870020965,144.10693468162947,325.1262054507337,89,388C33.89306531837054,450.8737945492663,24.174242611090563,543.5312368972745,18,666C11.82575738890944,788.4687631027255,9.196094874008299,940.7488469601676,13,1056C16.8039051259917,1171.2511530398324,27.04137789287624,1249.4733752620546,71,1351C114.95862210712376,1452.5266247379454,192.6383935544868,1577.3576519916141,242,1659C291.3616064455132,1740.6423480083859,312.40504788917667,1779.0960167714886,268,1879C223.59495211082336,1978.9039832285114,113.74141488880667,2140.258280922432,88,2337C62.25858511119333,2533.741719077568,120.62929255559666,2765.8708595387843,179,2998"></path>
-                      <path id="" class="narmol" stroke="#000" stroke-width="6px" stroke-dasharray="20" fill="none" d="M268,106C293.6990093311958,156.98197064989517,319.39801866239156,207.96394129979035,282,250C244.6019813376084,292.03605870020965,144.10693468162947,325.1262054507337,89,388C33.89306531837054,450.8737945492663,24.174242611090563,543.5312368972745,18,666C11.82575738890944,788.4687631027255,9.196094874008299,940.7488469601676,13,1056C16.8039051259917,1171.2511530398324,27.04137789287624,1249.4733752620546,71,1351C114.95862210712376,1452.5266247379454,192.6383935544868,1577.3576519916141,242,1659C291.3616064455132,1740.6423480083859,312.40504788917667,1779.0960167714886,268,1879C223.59495211082336,1978.9039832285114,113.74141488880667,2140.258280922432,88,2337C62.25858511119333,2533.741719077568,120.62929255559666,2765.8708595387843,179,2998" ></path>
+                      <path class="narmol" stroke="#000" stroke-width="6px" stroke-dasharray="20" fill="none" d="M268,106C293.6990093311958,156.98197064989517,319.39801866239156,207.96394129979035,282,250C244.6019813376084,292.03605870020965,144.10693468162947,325.1262054507337,89,388C33.89306531837054,450.8737945492663,24.174242611090563,543.5312368972745,18,666C11.82575738890944,788.4687631027255,9.196094874008299,940.7488469601676,13,1056C16.8039051259917,1171.2511530398324,27.04137789287624,1249.4733752620546,71,1351C114.95862210712376,1452.5266247379454,192.6383935544868,1577.3576519916141,242,1659C291.3616064455132,1740.6423480083859,312.40504788917667,1779.0960167714886,268,1879C223.59495211082336,1978.9039832285114,113.74141488880667,2140.258280922432,88,2337C62.25858511119333,2533.741719077568,120.62929255559666,2765.8708595387843,179,2998" ></path>
                   </svg>
               </div>
           </div>
