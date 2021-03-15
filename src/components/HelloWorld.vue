@@ -34,15 +34,22 @@
 
         created()
         {
-            let uri = window.location.href.split('?');
-            if (uri.length == 2)
+            let href = window.location.href;
+            let decoderLink;
+            try {
+                decoderLink = decodeURI(href);
+            } catch (e) {
+                console.error(e);
+            }
+            let uri = decoderLink.split('?');
+            if (uri.length === 2)
             {
                 let vars = uri[1].split('&');
                 let getVars = {};
                 let tmp = '';
                 vars.forEach(function(v){
                     tmp = v.split('=');
-                    if(tmp.length == 2)
+                    if(tmp.length === 2)
                         getVars[tmp[0]] = tmp[1];
                 });
                 this.guests = getVars;
@@ -52,20 +59,55 @@
         computed: {
             appeal(){
                 let appeal;
-                if( this.guests?.name2){
 
-                }
-                if (this.guests?.surname){
-                    appeal = this.guests?.name + ' ' + this.guests.surname;
+                if(this.guests?.g){
+                    this.guests.g === 'm' ? appeal = 'Дорогой ' : appeal = 'Дорагая ';
                 } else {
-                    appeal = this.guests?.name;
+                    appeal = 'Дорогие ';
                 }
-                console.log(this.guests);
+
+                if (this.guests?.surname1) {
+                    appeal= appeal + this.guests.name1 + ' ' + this.guests.surname1 + ',';
+                } else {
+                    appeal= appeal + this.guests.name1 + ',';
+                }
+
+                if (this.guests?.surname2) {
+                    appeal= appeal + ' ' + this.guests.name2 + ' ' + this.guests.surname2 + ',';
+                } else if (this.guests.name2) {
+                    appeal= appeal + ' ' + this.guests.name2 + ',';
+                }
+
+                if (this.guests?.surname3) {
+                    appeal= appeal + ' ' + this.guests.name3 + ' ' + this.guests.surname3 + ',';
+                } else if (this.guests.name3) {
+                    appeal= appeal + ' ' + this.guests.name3 + ',';
+                }
+
+                if (this.guests?.surname4) {
+                    appeal= appeal + ' ' + this.guests.name4 + ' ' + this.guests.surname4 + ',';
+                } else if (this.guests.name3) {
+                    appeal= appeal + ' ' + this.guests.name4 + ',';
+                }
+
                 return appeal;
             }
         },
 
         methods: {
+            /*getAppealString(name, surname, index){
+                if(name) {
+                    if(surname) {
+                        this.appeal = name + ' ' + surname;
+                        this.getAppealString(this.guests?.name2, this.guests?.surname2, index+1);
+                    } else {
+                        this.appeal = name;
+                        this.getAppealString(this.guests?.name2, this.guests?.surname2, index+1)
+                    }
+                } else {
+                    return this.appeal;
+                }
+            },*/
             handleScroll: function () {
                 const el = document.getElementById("roadmap");
                 //const height = document.documentElement.clientHeight;
@@ -419,7 +461,7 @@
                   </svg>
               </div>
               <p class="text-5xl text-center font-weight-light text-white">
-                  Окончили РЭУ<br>
+                  Окончили РЭУ 🧑‍🎓<br>
               </p>
           </div>
           <div class="absolute z-20 transition event17" style="opacity: 0;" v-scroll="handleScrollElement" id="event17">
@@ -447,7 +489,7 @@
           </div>
           <div class="absolute z-20 transition event19" style="opacity: 0;" v-scroll="handleScrollElement" id="event19">
               <p class="text-5xl text-center font-weight-light text-white">
-                  Крым - последняя точка Карты начала нашей любви
+                  Крым - последняя точка<br>Карты начала нашей любви ❤️
               </p>
               <div class="relative">
                   <p class="text-3xl m-auto text-center font-weight-light italic text-white">1 Сентября<br>2021г.</p>
@@ -472,13 +514,13 @@
           </div>
       </section>
       <section class="flex flex-column justify-center align-middle pt-64 px-36">
-          <h1 class="mb-6" style="font-size: 46px;color:#6B483C; background-color: transparent!important;">Дорогие {{ appeal }}, мы, Диана и Денис, с удовольствием приглашаем вас провести с нами наш особенный день.<br>Будем очень рады вас видеть 1 сентября на нашей свадьбе. 🎉</h1>
+          <h1 class="mb-6" style="font-size: 46px;color:#6B483C; background-color: transparent!important;">{{ appeal }} мы, Диана и Денис, с удовольствием приглашаем вас провести с нами наш особенный день.<br>Будем очень рады вас видеть 1 сентября на нашей свадьбе. 🎉</h1>
           <h2 style="font-size: 32px;color:#6B483C; background-color: transparent!important;">Также будем благодарны, если вы постараетесь соблюсти мягкие оттенки в цветовой гамме своих нарядов. </h2>
       </section>
-      <section class="flex flex-row justify-center align-middle pt-64" id="map-Russia">
+      <!--<section class="flex flex-row justify-center align-middle pt-64" id="map-Russia">
 
-      </section>
-      <section class="flex flex-row justify-center align-middle pt-32">
+      </section>-->
+      <section class="flex flex-row justify-center align-middle pt-24">
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf3FGt15vUyQ4oBezCNLttmf664_YNryVzzjAeBg9QC-PHN1g/viewform?embedded=true" width="640" height="1296" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
       </section>
   </v-container>
