@@ -23,7 +23,8 @@
                     {
                         src: 'https://sun9-10.userapi.com/impf/33QeLQXiSkCGHnXxFK3F3Zab1TWGD9K0HTPdvg/CGHquEzWZIw.jpg?size=2560x1920&quality=96&sign=7af8fa6f8700b2277d05f85f8b447962&type=album',
                     },
-                ]
+                ],
+                guests: {}
             }
         },
 
@@ -31,8 +32,37 @@
             //this.scroll();
         },
 
-        watch: {
+        created()
+        {
+            let uri = window.location.href.split('?');
+            if (uri.length == 2)
+            {
+                let vars = uri[1].split('&');
+                let getVars = {};
+                let tmp = '';
+                vars.forEach(function(v){
+                    tmp = v.split('=');
+                    if(tmp.length == 2)
+                        getVars[tmp[0]] = tmp[1];
+                });
+                this.guests = getVars;
+            }
+        },
 
+        computed: {
+            appeal(){
+                let appeal;
+                if( this.guests?.name2){
+
+                }
+                if (this.guests?.surname){
+                    appeal = this.guests?.name + ' ' + this.guests.surname;
+                } else {
+                    appeal = this.guests?.name;
+                }
+                console.log(this.guests);
+                return appeal;
+            }
         },
 
         methods: {
@@ -47,6 +77,78 @@
                     this.scroll();
                 }
                 return window.scrollY > 100
+            },
+            handleScrollElement : function () {
+                let id;
+                const scrollY = window.scrollY;
+
+                switch (true){
+                    case scrollY >= 400 && scrollY <= 500:
+                        id = 'event1';
+                        break;
+                    case scrollY >= 500 && scrollY <= 600:
+                        id = 'event2';
+                        break;
+                    case  scrollY >= 600 && scrollY <= 700:
+                        id = 'event4';
+                        break;
+                    case  scrollY >= 700 && scrollY <= 900:
+                        id = 'event5';
+                        break;
+                    case scrollY >= 900 && scrollY <= 1100:
+                        id = 'event6';
+                        break;
+                    case scrollY >= 1100 && scrollY <= 1200:
+                        id = 'event7';
+                        break;
+                    case scrollY >= 1200 && scrollY <= 1300:
+                        id = 'event8';
+                        break;
+                    case scrollY >= 1300 && scrollY <= 1600:
+                        id = 'event9';
+                        break;
+                    case scrollY >= 1600 && scrollY <= 1900:
+                        id = 'event10';
+                        break;
+                    case scrollY >= 1900 && scrollY <= 2100:
+                        id = 'event11';
+                        break;
+                    case scrollY >= 2100 && scrollY <= 2200:
+                        id = 'event12';
+                        break;
+                    case scrollY >= 2200 && scrollY <= 2300:
+                        id = 'event13';
+                        break;
+                    case scrollY >= 2300 && scrollY <= 2600:
+                        id = 'event14';
+                        break;
+                    case scrollY >= 2600 && scrollY <= 2700:
+                        id = 'event15';
+                        break;
+                    case  scrollY >= 2700 && scrollY <= 2900:
+                        id = 'event16';
+                        break;
+                    case scrollY >= 2900 && scrollY <= 3000:
+                        id = 'event17';
+                        break;
+                    case scrollY >= 3000 && scrollY <= 3100:
+                        id = 'event18';
+                        break;
+                    case /* myInterval >= 6 && */ scrollY >= 3600:
+                        id = 'event19';
+                        break;
+
+                    default:
+                        id = 'event1';
+                }
+                const element = document.getElementById(id);
+
+                if (window.scrollY > 400) {
+                    element.setAttribute(
+                        'style',
+                        'opacity: 1; transform: translate3d(0, -10px, 0)'
+                    )
+                }
             },
             scroll() {
                 // set height of the svg path as constant
@@ -146,7 +248,7 @@
           </h2>
       </section>
       <section class="flex flex-column justify-center align-middle pt-24 relative">
-          <div class="z-20" id="event1">
+          <div class="z-20 transition" style="opacity: 0;" v-scroll="handleScrollElement" id="event1">
               <p class="text-5xl m-auto text-center w-4/12 font-weight-light text-white">
                   Церковь ⛪️<br>
                   Рэу им. Плеханова
@@ -156,7 +258,7 @@
                   <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
               </svg>
           </div>
-          <div class="absolute z-20" style="top: 350px; right: 260px" id="event2">
+          <div class="absolute z-20 transition event2" style="opacity: 0;" v-scroll="handleScrollElement" id="event2">
               <div class="relative">
                   <p class="text-3xl m-auto text-center font-weight-light italic text-white">5 Ноября 2017.</p>
                   <svg class="absolute z-10" style="top: 105px; right: 490px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -168,22 +270,22 @@
                   начала отношений 👩‍❤️‍👨
               </p>
           </div>
-          <div class="absolute z-20" style="top: 450px;left: 100px;" id="event4">
+          <div class="absolute z-20 transition event4" style="opacity: 0;" v-scroll="handleScrollElement" id="event4">
               <p class="text-5xl text-center font-weight-light text-white">
                   Первый <br>совместный<br>
                   Новый Год 🎄
               </p>
               <div class="relative">
                   <p class="text-3xl m-auto text-center font-weight-light italic text-white">1 Января 2018г.</p>
-                  <svg class="absolute z-10" style="top: -85px;left: 345px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg class="absolute z-10" style="top: -73px;left: 345px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
                   </svg>
               </div>
           </div>
-          <div class="absolute z-20" style="top: 750px;left: 660px;" id="event5">
+          <div class="absolute z-20 transition event5" style="opacity: 0;" v-scroll="handleScrollElement" id="event5">
               <div class="relative">
                   <p class="text-3xl m-auto text-center font-weight-light italic text-white">14 Февраля<br>2018г.</p>
-                  <svg class="absolute z-10" style="top: -70px;left: 100px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg class="absolute z-10" style="top: 45px;left: 300px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
                   </svg>
               </div>
@@ -191,134 +293,165 @@
                   Сюрприз<br>в лифте 🍿
               </p>
           </div>
-          <div class="absolute z-20" style="top: 950px; right: 260px" id="event6">
+          <div class="absolute z-20 transition event6" style="opacity: 0;" v-scroll="handleScrollElement" id="event6">
               <div class="relative">
-                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">5 Ноября</p>
-                  <svg class="absolute z-10" style="top: 105px; right: 490px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">25 Марта<br>2018г.</p>
+                  <svg class="absolute z-10" style="top: -70px;left: 100px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
                   </svg>
               </div>
               <p class="text-5xl text-center font-weight-light text-white">
-                  Дата<br>
-                  начала отношений 👩‍❤️‍👨
+                  Сюрприз<br>
+                  от Дианы 🎂
               </p>
           </div>
-          <div class="absolute z-20" style="top:1150px; right: 260px" id="event7">
+          <div class="absolute z-20 transition event7" style="opacity: 0;" v-scroll="handleScrollElement" id="event7">
               <div class="relative">
-                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">5 Ноября</p>
-                  <svg class="absolute z-10" style="top: 105px; right: 490px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">27 Мая<br>2018г.</p>
+                  <svg class="absolute z-10" style="top: -20px;right: 355px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
                   </svg>
               </div>
               <p class="text-5xl text-center font-weight-light text-white">
-                  Дата<br>
-                  начала отношений 👩‍❤️‍👨
+                  Конная прогулка 🐎
               </p>
           </div>
-          <div class="absolute z-20" style="top: 1350px; right: 260px" id="event8">
+          <div class="absolute z-20 transition event8" style="opacity: 0;" v-scroll="handleScrollElement" id="event8">
               <div class="relative">
-                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">5 Ноября</p>
-                  <svg class="absolute z-10" style="top: 105px; right: 490px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">Июль<br>2018г.</p>
+                  <svg class="absolute z-10" style="top: 45px; left: 420px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
                   </svg>
               </div>
               <p class="text-5xl text-center font-weight-light text-white">
-                  Дата<br>
-                  начала отношений 👩‍❤️‍👨
+                  Студенческая<br>
+                  поездка в Анапу 🏖
               </p>
           </div>
-          <div class="absolute z-20" style="top: 1550px; right: 260px" id="event9">
+          <div class="absolute z-20 transition event9" style="opacity: 0;" v-scroll="handleScrollElement" id="event9">
               <div class="relative">
-                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">5 Ноября</p>
-                  <svg class="absolute z-10" style="top: 105px; right: 490px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">Август<br>2018г.</p>
+                  <svg class="absolute z-10" style="top: 140px; right: 380px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
                   </svg>
               </div>
               <p class="text-5xl text-center font-weight-light text-white">
-                  Дата<br>
-                  начала отношений 👩‍❤️‍👨
+                  Прекрасный<br>
+                  Калининград 🏰
               </p>
           </div>
-          <div class="absolute z-20" style="top: 1750px; right: 260px" id="event10">
+          <div class="absolute z-20 transition event10" style="opacity: 0;" v-scroll="handleScrollElement" id="event10">
               <div class="relative">
-                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">5 Ноября</p>
-                  <svg class="absolute z-10" style="top: 105px; right: 490px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">5 Ноября<br>2018г.</p>
+                  <svg class="absolute z-10" style="top: 20px;right: -60px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
                   </svg>
               </div>
               <p class="text-5xl text-center font-weight-light text-white">
-                  Дата<br>
-                  начала отношений 👩‍❤️‍👨
+                  Первая годовщина 🥂
               </p>
           </div>
-          <div class="absolute z-20" style="top:1950px; right: 260px" id="event11">
+          <div class="absolute z-20 transition event11" style="opacity: 0;" v-scroll="handleScrollElement" id="event11">
               <div class="relative">
-                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">5 Ноября</p>
-                  <svg class="absolute z-10" style="top: 105px; right: 490px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">27 Апреля<br>2019г.</p>
+                  <svg class="absolute z-10" style="top: -10px; right: 300px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
                   </svg>
               </div>
               <p class="text-5xl text-center font-weight-light text-white">
-                  Дата<br>
-                  начала отношений 👩‍❤️‍👨
+                   Знакомство<br>
+                  с мамой Дианы 🤗
               </p>
           </div>
-          <div class="absolute z-20" style="top: 2150px; right: 260px" id="event12">
+          <div class="absolute z-20 transition event12" style="opacity: 0;" v-scroll="handleScrollElement" id="event12">
               <div class="relative">
-                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">5 Ноября</p>
-                  <svg class="absolute z-10" style="top: 105px; right: 490px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">25 Мая<br>2019г.</p>
+                  <svg class="absolute z-10" style="top: 155px;left: 350px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
                   </svg>
               </div>
               <p class="text-5xl text-center font-weight-light text-white">
-                  Дата<br>
-                  начала отношений 👩‍❤️‍👨
+                  Начало совместной<br>
+                  жизни 🏠
               </p>
           </div>
-          <div class="absolute z-20" style="top: 2350px; right: 260px" id="event13">
+          <div class="absolute z-20 transition event13" style="opacity: 0;" v-scroll="handleScrollElement" id="event13">
               <div class="relative">
-                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">5 Ноября</p>
-                  <svg class="absolute z-10" style="top: 105px; right: 490px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">29 Декабря<br>2019г.</p>
+                  <svg class="absolute z-10" style="top: 35px;left: -95px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
                   </svg>
               </div>
               <p class="text-5xl text-center font-weight-light text-white">
-                  Дата<br>
-                  начала отношений 👩‍❤️‍👨
+                  Прилетели<br>
+                  во ВДк 🌉
               </p>
           </div>
-          <div class="absolute z-20" style="top:2550px; right: 260px" id="event14">
+          <div class="absolute z-20 transition event14" style="opacity: 0;" v-scroll="handleScrollElement" id="event14">
               <div class="relative">
-                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">5 Ноября</p>
-                  <svg class="absolute z-10" style="top: 105px; right: 490px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">31 Декабря<br>2019г.</p>
+                  <svg class="absolute z-10" style="top: -65px;left: 140px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
                   </svg>
               </div>
               <p class="text-5xl text-center font-weight-light text-white">
-                  Дата<br>
-                  начала отношений 👩‍❤️‍👨
+                  Новый Год<br>
+                  в кругу семьи 🎄
               </p>
           </div>
-          <div class="absolute z-20" style="top: 2750px; right: 260px" id="event15">
+          <div class="absolute z-20 transition event15" style="opacity: 0;" v-scroll="handleScrollElement" id="event15">
               <div class="relative">
-                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">5 Ноября</p>
-                  <svg class="absolute z-10" style="top: 105px; right: 490px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">27 мая<br>2020г.</p>
+                  <svg class="absolute z-10" style="top: 155px;left: -67px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
                   </svg>
               </div>
               <p class="text-5xl text-center font-weight-light text-white">
-                  Дата<br>
-                  начала отношений 👩‍❤️‍👨
+                  Предложение<br>
+                  руки и сердца 💍
               </p>
           </div>
-          <div class="absolute z-20" style="top: 2980px; left: 270px" id="event16">
+          <div class="absolute z-20 transition event16" style="opacity: 0;" v-scroll="handleScrollElement" id="event16">
+              <div class="relative">
+                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">31 Декабря<br>2020г.</p>
+                  <svg class="absolute z-10" style="top: 30px;left: -73px" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
+                  </svg>
+              </div>
               <p class="text-5xl text-center font-weight-light text-white">
-                  Первый совместный<br>
-                  Новый Год🎄
+                  Окончили РЭУ<br>
+              </p>
+          </div>
+          <div class="absolute z-20 transition event17" style="opacity: 0;" v-scroll="handleScrollElement" id="event17">
+              <div class="relative">
+                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">23 Сентября<br>2020г.</p>
+                  <svg class="absolute z-10" style="top: 130px;left: 335px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
+                  </svg>
+              </div>
+              <p class="text-5xl text-center font-weight-light text-white">
+                  Теперь<br>
+                  мы коллеги 👩🏼‍💻
+              </p>
+          </div>
+          <div class="absolute z-20 transition event18" style="opacity: 0;" v-scroll="handleScrollElement" id="event18">
+              <div class="relative">
+                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">Март<br>2021г.</p>
+                  <svg class="absolute z-10" style="top: 133px;left: -90px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
+                  </svg>
+              </div>
+              <p class="text-5xl text-center font-weight-light text-white">
+                  Решение по месту<br>и дате свадьбы 💒
+              </p>
+          </div>
+          <div class="absolute z-20 transition event19" style="opacity: 0;" v-scroll="handleScrollElement" id="event19">
+              <p class="text-5xl text-center font-weight-light text-white">
+                  Крым - последняя точка Карты начала нашей любви
               </p>
               <div class="relative">
-                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">31 Декабря</p>
-                  <svg class="absolute z-10" style="top: 105px; right: 490px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <p class="text-3xl m-auto text-center font-weight-light italic text-white">1 Сентября<br>2021г.</p>
+                  <svg class="absolute z-10" style="top: -120px;left: 557px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
                   </svg>
               </div>
@@ -338,7 +471,14 @@
               </div>
           </div>
       </section>
-      <section class="flex flex-row justify-center align-middle pt-24">
+      <section class="flex flex-column justify-center align-middle pt-64 px-36">
+          <h1 class="mb-6" style="font-size: 46px;color:#6B483C; background-color: transparent!important;">Дорогие {{ appeal }}, мы, Диана и Денис, с удовольствием приглашаем вас провести с нами наш особенный день.<br>Будем очень рады вас видеть 1 сентября на нашей свадьбе. 🎉</h1>
+          <h2 style="font-size: 32px;color:#6B483C; background-color: transparent!important;">Также будем благодарны, если вы постараетесь соблюсти мягкие оттенки в цветовой гамме своих нарядов. </h2>
+      </section>
+      <section class="flex flex-row justify-center align-middle pt-64" id="map-Russia">
+
+      </section>
+      <section class="flex flex-row justify-center align-middle pt-32">
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf3FGt15vUyQ4oBezCNLttmf664_YNryVzzjAeBg9QC-PHN1g/viewform?embedded=true" width="640" height="1296" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
       </section>
   </v-container>
@@ -358,6 +498,78 @@
     .container {
         min-height: 800px;
         text-align: center;
+    }
+
+    .transition {
+        transition: 1.5s all cubic-bezier(0.39, 0.575, 0.565, 1);
+    }
+    .event2 {
+        top: 350px;
+        right: 260px;
+    }
+    .event4 {
+        top: 450px;
+        left: 100px;
+    }
+    .event5{
+        top: 750px;
+        left: 160px;
+    }
+    .event6{
+        top: 750px;
+        left: 660px;
+    }
+    .event7 {
+        top:1000px;
+        right: 260px
+    }
+    .event8 {
+        top: 1050px;
+        left: 220px;
+    }
+    .event9 {
+        top: 1200px;
+        right: 200px;
+    }
+    .event10 {
+        top: 1550px;
+        left: 660px;
+    }
+    .event11 {
+        top: 1800px;
+        right: 160px;
+    }
+    .event12 {
+        top: 1650px;
+        left: 160px;
+    }
+    .event13 {
+        top: 2000px;
+        left: 420px
+    }
+    .event14 {
+        top: 2355px;
+        left: 360px;
+    }
+    .event15 {
+        top: 2300px;
+        right: 280px;
+    }
+    .event16 {
+        top: 2580px;
+        right: 350px;
+    }
+    .event17 {
+        top: 2600px;
+        left: 230px;
+    }
+    .event18 {
+        top: 2800px;
+        left: 680px;
+    }
+    .event19 {
+        top:3150px;
+        left:140px;
     }
 
     svg {
