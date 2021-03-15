@@ -197,14 +197,12 @@
                 const svg = document.getElementById("svgPath");
                 const length = svg.getTotalLength();
 
-// start positioning of svg drawing
                 svg.style.strokeDasharray = length;
-
-// hide svg before scrolling starts
                 svg.style.strokeDashoffset = length;
 
                     window.addEventListener("scroll", function () {
-                        const scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
+                        const fixScrollHeight = 5518;
+                        const scrollpercent = (document.body.scrollTop + document.documentElement.scrollTop) / (fixScrollHeight - document.documentElement.clientHeight);
                         let draw;
                         const scrollY = window.scrollY;
 
@@ -289,7 +287,7 @@
               Немного из истории
           </h2>
       </section>
-      <section class="flex flex-column justify-center align-middle pt-24 relative">
+      <section class="flex flex-column justify-center align-middle pt-24 relative road-map_block">
           <div class="z-20 transition" style="opacity: 0;" v-scroll="handleScrollElement" id="event1">
               <p class="text-5xl m-auto text-center w-4/12 font-weight-light text-white">
                   Церковь ⛪️<br>
@@ -489,7 +487,8 @@
           </div>
           <div class="absolute z-20 transition event19" style="opacity: 0;" v-scroll="handleScrollElement" id="event19">
               <p class="text-5xl text-center font-weight-light text-white">
-                  Крым - последняя точка<br>Карты начала нашей любви ❤️
+                  Крым - последняя точка<br>
+                  Карты начала нашей любви ❤️
               </p>
               <div class="relative">
                   <p class="text-3xl m-auto text-center font-weight-light italic text-white">1 Сентября<br>2021г.</p>
@@ -612,6 +611,16 @@
     .event19 {
         top:3150px;
         left:140px;
+    }
+
+    .road-map_block {
+        min-width: 1512px !important;
+    }
+
+    @media screen and (max-width: 1412px) {
+        .road-map_block {
+            display: none;
+        }
     }
 
     svg {
