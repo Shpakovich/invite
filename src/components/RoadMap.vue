@@ -173,16 +173,25 @@
 
 <template>
     <section class="flex flex-column justify-center align-middle pt-24 relative">
-        <div class="z-20 transition-fast" style="opacity: 0;" v-scroll="handleScrollElement" id="event1">
-            <p class="text-3xl m-auto text-center font-weight-light italic text-white">1 Сенября 2017г.</p>
-            <p class="text-5xl m-auto text-center font-weight-light text-white">
-                Знакомство — Церковь ⛪️<br>
-                Рэу им. Плеханова
-            </p>
-            <svg class="m-auto" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
-            </svg>
-        </div>
+        <v-tooltip :open-on-hover="false" :open-on-click="true"  color="rgba(255,255,255, 0.2)" max-width="400" z-index="50" top>
+            <template v-slot:activator="{ on, attrs }">
+                <div v-bind="attrs" v-on="on" class="z-20 transition-fast" style="opacity: 0;" v-scroll="handleScrollElement" id="event1">
+                    <p class="text-3xl m-auto text-center font-weight-light italic text-white">1 Сенября 2017г.</p>
+                    <p class="text-5xl m-auto text-center font-weight-light text-white">
+                        Знакомство — Церковь ⛪️<br>
+                        Рэу им. Плеханова
+                    </p>
+                    <svg class="m-auto" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
+                    </svg>
+                </div>
+            </template>
+            <img
+                    class=""
+                src="https://sun9-74.userapi.com/impf/e_2iJ3cFyVqUrSpRAbJYQSQzSy7lObINcyRV4A/BXulRkg-H6E.jpg?size=1620x2160&quality=96&sign=19960dff0519831b30fbbb38cd324097&type=album"
+                alt=""
+            >
+        </v-tooltip>
         <div class="absolute z-20 transition-fast event2" style="opacity: 0;" v-scroll="handleScrollElement" id="event2">
             <div class="relative">
                 <p class="text-3xl m-auto text-center font-weight-light italic text-white">5 Ноября 2017.</p>
@@ -219,112 +228,193 @@
             </p>
         </div>
         <div class="absolute z-20 transition-fast event6" style="opacity: 0;" v-scroll="handleScrollElement" id="event6">
-            <div class="relative">
-                <p class="text-3xl m-auto text-center font-weight-light italic text-white">25 Марта<br>2018г.</p>
-                <svg class="absolute z-10" style="top: 190px;left: -13px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
-                </svg>
-            </div>
-            <p class="text-5xl text-center font-weight-light text-white">
-                День Рождения<br>в подарок — МЛР🎂
-            </p>
+            <v-tooltip :open-on-hover="false" :open-on-click="true" color="rgba(255,255,255, 0.2)" max-width="400" z-index="50" top>
+                <template v-slot:activator="{ on, attrs }">
+                    <div v-bind="attrs" v-on="on" class="relative">
+                        <p class="text-3xl m-auto text-center font-weight-light italic text-white">25 Марта<br>2018г.</p>
+                        <svg class="absolute z-10" style="top: 190px;left: -13px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
+                        </svg>
+                        <p class="text-5xl text-center font-weight-light text-white">
+                            Прекрасный Город<br>— Питер 🚂
+                        </p>
+                    </div>
+                </template>
+                <img
+                        class=""
+                        src="https://lh3.googleusercontent.com/pw/ACtC-3fcmB0LV8aEpqIkHA8xRWs7m5ct9Ce0j2sOcPipLIoVG0TV46M7MLaxplXWFuMRTc96ySUQ2z04i5WN6gUdi4cbV0aP1zGBeuWRNuYRqpTFJBshtE5PXsHaIf5SbigT-OHdOm0R_Vd5CTokqUJn7c4=w2352-h1764-no?authuser=0"
+                        alt=""
+                >
+            </v-tooltip>
         </div>
         <div class="absolute z-20 transition-fast event7" style="opacity: 0;" v-scroll="handleScrollElement" id="event7">
-            <div class="relative">
-                <p class="text-3xl m-auto text-center font-weight-light italic text-white">27 Мая<br>2018г.</p>
-                <svg class="absolute z-10" style="top: 40px;right: 355px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
-                </svg>
-            </div>
-            <p class="text-5xl text-center font-weight-light text-white">
-                Конная прогулка —<br>
-                КД Лесное🐎
-            </p>
+            <v-tooltip :open-on-hover="false" :open-on-click="true" color="rgba(255,255,255, 0.2)" max-width="400" z-index="50" top>
+                <template v-slot:activator="{ on, attrs }">
+                    <div v-bind="attrs" v-on="on" class="relative">
+                        <p class="text-3xl m-auto text-center font-weight-light italic text-white">27 Мая<br>2018г.</p>
+                        <svg class="absolute z-10" style="top: 40px;right: 355px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
+                        </svg>
+                        <p class="text-5xl text-center font-weight-light text-white">
+                            Конная прогулка —<br>
+                            КД Лесное🐎
+                        </p>
+                    </div>
+                </template>
+                <img
+                        class=""
+                        src="https://lh3.googleusercontent.com/pw/ACtC-3e9MweheRMmSB6hzAAHPiS13z6umjmHEWsQZz1ObZkWe0nC-H1S_GZrl8jVq2hjwYS76xIr3MRLLhm_TVJOvsbbOeJG9em9kC6Sl9QuJa8pOhUeHGiLDkGg1aUWbAiZ70elLOL8lEhObO52PF_0ScA=w960-h1280-no?authuser=0"
+                        alt=""
+                >
+            </v-tooltip>
         </div>
         <div class="absolute z-20 transition-fast event8" style="opacity: 0;" v-scroll="handleScrollElement" id="event8">
-            <div class="relative">
-                <p class="text-3xl m-auto text-center font-weight-light italic text-white">Июль<br>2018г.</p>
-                <svg class="absolute z-10" style="top: 45px; left: 420px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
-                </svg>
-            </div>
-            <p class="text-5xl text-center font-weight-light text-white">
-                Студенческая<br>
-                поездка — Анапа 🏖
-            </p>
+            <v-tooltip :open-on-hover="false" :open-on-click="true" color="rgba(255,255,255, 0.2)" max-width="400" z-index="50" top>
+                <template v-slot:activator="{ on, attrs }">
+                    <div v-bind="attrs" v-on="on" class="relative">
+                        <p class="text-3xl m-auto text-center font-weight-light italic text-white">Июль<br>2018г.</p>
+                        <svg class="absolute z-10" style="top: 45px; left: 420px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
+                        </svg>
+                        <p class="text-5xl text-center font-weight-light text-white">
+                            Студенческая<br>
+                            поездка — Анапа 🏖
+                        </p>
+                    </div>
+                </template>
+                <img
+                        class=""
+                        src="https://lh3.googleusercontent.com/pw/ACtC-3e6To7PuHdA-ISjjpGKe0VvaOdjNA3N2DDBZs9oJ3pV-Wu71iiX9qzyyubWKeP8626DTQTt92SqfRZoIDPbbn5yHGqFGbMDaICZL_lgKH8qW15bVCg8ERUrQCVCrYFSivxzmoOhSVmy7EPy4lTAkKM=w1330-h1772-no?authuser=0"
+                        alt=""
+                >
+            </v-tooltip>
         </div>
         <div class="absolute z-20 transition-fast event9" style="opacity: 0;" v-scroll="handleScrollElement" id="event9">
-            <div class="relative">
-                <p class="text-3xl m-auto text-center font-weight-light italic text-white">Август<br>2018г.</p>
-                <svg class="absolute z-10" style="top: 140px; right: 380px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
-                </svg>
-            </div>
-            <p class="text-5xl text-center font-weight-light text-white">
-                Прекрасный<br>
-                Калининград 🏰
-            </p>
+            <v-tooltip :open-on-hover="false" :open-on-click="true" color="rgba(255,255,255, 0.2)" max-width="400" z-index="50" top>
+                <template v-slot:activator="{ on, attrs }">
+                    <div v-bind="attrs" v-on="on" class="relative">
+                        <p class="text-3xl m-auto text-center font-weight-light italic text-white">Август<br>2018г.</p>
+                        <svg class="absolute z-10" style="top: 140px; right: 380px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
+                        </svg>
+                        <p class="text-5xl text-center font-weight-light text-white">
+                            Прекрасный<br>
+                            Калининград 🏰
+                        </p>
+                    </div>
+                </template>
+                <img
+                        class=""
+                        src="https://lh3.googleusercontent.com/pw/ACtC-3dn1cvK9NY023_Ihjvpjyz9bpUyHXY7pHsSC9VY85cQCf4g_0hf7IQsY1jW4wGsl6Oi8dfELUW0vX3f2HXlE8z3xiMHrveBWJY88Cmdu142KCHxBH9H9kNkXyd8Tv48b2cEAKKU318MHWZTRxkXzlQ=w1330-h1772-no?authuser=0"
+                        alt=""
+                >
+            </v-tooltip>
         </div>
         <div class="absolute z-20 transition-fast event10" style="opacity: 0;" v-scroll="handleScrollElement" id="event10">
-            <div class="relative">
-                <p class="text-3xl m-auto text-center font-weight-light italic text-white">5 Ноября<br>2018г.</p>
-                <svg class="absolute z-10" style="top: 100px;right: -75px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
-                </svg>
-            </div>
-            <p class="text-5xl text-center font-weight-light text-white">
-                Первая годовщина —<br>
-                далеко, но рядом🥂
-            </p>
+            <v-tooltip :open-on-hover="false" :open-on-click="true" color="rgba(255,255,255, 0.2)" max-width="400" z-index="50" top>
+                <template v-slot:activator="{ on, attrs }">
+                    <div v-bind="attrs" v-on="on" class="relative">
+                        <p class="text-3xl m-auto text-center font-weight-light italic text-white">5 Ноября<br>2018г.</p>
+                        <svg class="absolute z-10" style="top: 100px;right: -75px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
+                        </svg>
+                        <p class="text-5xl text-center font-weight-light text-white">
+                            Первая годовщина —<br>
+                            далеко, но рядом🥂
+                        </p>
+                    </div>
+                 </template>
+                <img
+                        class=""
+                        src="https://lh3.googleusercontent.com/pw/ACtC-3dJBHiqTOJUjVEpOdUCczqcgePSbl-hsDQN8J86gWmYZfoX1svjHwBcCh0l6jh17xMArEFYRl2YuCQRI28BFZbrGWdlF4UrnjwqGz6D35uGUEhdxY5jmrlI3HpN1btK7pJKepihKYDjlDr_gGFQZeA=w2364-h1772-no?authuser=0"
+                        alt=""
+                >
+            </v-tooltip>
         </div>
         <div class="absolute z-20 transition-fast event11" style="opacity: 0;" v-scroll="handleScrollElement" id="event11">
-            <div class="relative">
-                <p class="text-3xl m-auto text-center font-weight-light italic text-white">27 Апреля<br>2019г.</p>
-                <svg class="absolute z-10" style="top: 0; right: 320px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
-                </svg>
-            </div>
-            <p class="text-5xl text-center font-weight-light text-white">
-                Знакомство с мамой<br>
-                невесты — "Карлсон" 🤗
-            </p>
+            <v-tooltip :open-on-hover="false" :open-on-click="true" color="rgba(255,255,255, 0.2)" max-width="400" z-index="50" top>
+                <template v-slot:activator="{ on, attrs }">
+                    <div v-bind="attrs" v-on="on" class="relative">
+                        <p class="text-3xl m-auto text-center font-weight-light italic text-white">27 Апреля<br>2019г.</p>
+                        <svg class="absolute z-10" style="top: 0; right: 320px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
+                        </svg>
+                        <p class="text-5xl text-center font-weight-light text-white">
+                            Знакомство с мамой<br>
+                            невесты — "Карлсон" 🤗
+                        </p>
+                    </div>
+                </template>
+                <img
+                        class=""
+                        src="https://lh3.googleusercontent.com/pw/ACtC-3f9Yc1YtRZfzQ9vLmrqYowhrKhWm13lLYy6oezMGG7-O8RvNmLgYhRhhDRyGjs6i14n5tRKmg12OWU8_s6Da7_Imiu8YvTAVnJ70oN8wimdy5Na2Frj48KV4u0WH0N1rUyjIasNOu3EBo3_oi_3H80z=w1330-h1772-no?authuser=0"
+                        alt=""
+                >
+            </v-tooltip>
         </div>
         <div class="absolute z-20 transition-fast event12" style="opacity: 0;" v-scroll="handleScrollElement" id="event12">
-            <div class="relative">
-                <p class="text-3xl m-auto text-center font-weight-light italic text-white">25 Мая<br>2019г.</p>
-                <svg class="absolute z-10" style="top: 190px;left: 390px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
-                </svg>
-            </div>
-            <p class="text-5xl text-center font-weight-light text-white">
-                Начало совместной<br>
-                жизни — А.Янгеля 🏠
-            </p>
+            <v-tooltip :open-on-hover="false" :open-on-click="true" color="rgba(255,255,255, 0.2)" max-width="400" z-index="50" top>
+                <template v-slot:activator="{ on, attrs }">
+                    <div v-bind="attrs" v-on="on" class="relative">
+                        <p class="text-3xl m-auto text-center font-weight-light italic text-white">25 Мая<br>2019г.</p>
+                        <svg class="absolute z-10" style="top: 190px;left: 390px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
+                        </svg>
+                        <p class="text-5xl text-center font-weight-light text-white">
+                            Начало совместной<br>
+                            жизни — А.Янгеля 🏠
+                        </p>
+                    </div>
+                </template>
+                <img
+                        class=""
+                        src="https://lh3.googleusercontent.com/pw/ACtC-3fqT0E3F9WInZbdo9fakpwV4WszhU9V8BPGLP23a8Ig6ej3OQXPfCUw6zzEG12fqFUP05HALHA5FmKboREpaYQ4NB1usGXuvtKGquT8TEZk7hQvwQDcMvMf8Yn3pCAAeXENyQ6CCLzzfxXYD19cRWM=w960-h721-no?authuser=0"
+                        alt=""
+                >
+            </v-tooltip>
         </div>
         <div class="absolute z-20 transition-fast event13" style="opacity: 0;" v-scroll="handleScrollElement" id="event13">
-            <div class="relative">
-                <p class="text-3xl m-auto text-center font-weight-light italic text-white">29 Декабря<br>2019г.</p>
-                <svg class="absolute z-10" style="top: 35px;left: -95px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
-                </svg>
-            </div>
-            <p class="text-5xl text-center font-weight-light text-white">
-                Совместный отдых<br>
-                во Владивостоке 🌉
-            </p>
+            <v-tooltip :open-on-hover="false" :open-on-click="true" color="rgba(255,255,255, 0.2)" max-width="400" z-index="50" top>
+                <template v-slot:activator="{ on, attrs }">
+                    <div v-bind="attrs" v-on="on" class="relative">
+                            <p class="text-3xl m-auto text-center font-weight-light italic text-white">29 Декабря<br>2019г.</p>
+                            <svg class="absolute z-10" style="top: 35px;left: -95px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
+                            </svg>
+                        <p class="text-5xl text-center font-weight-light text-white">
+                            Совместный отдых<br>
+                            во Владивостоке 🌉
+                        </p>
+                    </div>
+                </template>
+                <img
+                        class=""
+                        src="https://lh3.googleusercontent.com/pw/ACtC-3fvwRsUtBtyBTRJaVoJ-DDd4fHQntKy3BY8J5eedoD76l5hom31sq09Rt1u3gHzNowsg8ntTXlVkOZ8eUtwLPFJG3osPjT7tSwU-jR7kc4KsE0Ex7uHtHP1laugP6z_6-JY5FZGgcMfcNr1-ujBuX30=w1324-h1764-no?authuser=0"
+                        alt=""
+                >
+            </v-tooltip>
         </div>
         <div class="absolute z-20 transition-fast event14" style="opacity: 0;" v-scroll="handleScrollElement" id="event14">
-            <div class="relative">
-                <p class="text-3xl m-auto text-center font-weight-light italic text-white">31 Декабря<br>2019г.</p>
-                <svg class="absolute z-10" style="top: -65px;left: 220px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
-                </svg>
-            </div>
-            <p class="text-5xl text-center font-weight-light text-white">
-                Новый Год<br>
-                в кругу семьи невесты<br>
-                — Владивосток 🎄
-            </p>
+            <v-tooltip :open-on-hover="false" :open-on-click="true" color="rgba(255,255,255, 0.2)" max-width="400" z-index="50" top>
+                <template v-slot:activator="{ on, attrs }">
+                    <div v-bind="attrs" v-on="on" class="relative">
+                        <p class="text-3xl m-auto text-center font-weight-light italic text-white">31 Декабря<br>2019г.</p>
+                        <svg class="absolute z-10" style="top: -65px;left: 220px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
+                        </svg>
+                        <p class="text-5xl text-center font-weight-light text-white">
+                            Новый Год<br>
+                            в кругу семьи невесты<br>
+                            — Владивосток 🎄
+                        </p>
+                    </div>
+                </template>
+                <img
+                        class=""
+                        src="https://lh3.googleusercontent.com/pw/ACtC-3feRlZl2lVrSnv67lHaqLGlfQ2kGQO-TY_VcpTO-fbvM_aURQdLPsvNm9L7qjopm8WJ_Qa2Yff9waALfglVXKAzsJAjKIV4M6lBMLJkXtZ1C1kUMbGHJ2Gwj467Ct5qVrNMN6JyQ3s4SekER0SV4cMW=w2352-h1764-no?authuser=0"
+                        alt=""
+                >
+            </v-tooltip>
         </div>
         <div class="absolute z-20 transition-fast event15" style="opacity: 0;" v-scroll="handleScrollElement" id="event15">
             <div class="relative">
@@ -339,16 +429,25 @@
             </p>
         </div>
         <div class="absolute z-20 transition-fast event16" style="opacity: 0;" v-scroll="handleScrollElement" id="event16">
-            <div class="relative">
-                <p class="text-3xl m-auto text-center font-weight-light italic text-white">31 Декабря<br>2020г.</p>
-                <svg class="absolute z-10" style="top: 30px;left: -13px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
-                </svg>
-            </div>
-            <p class="text-5xl text-center font-weight-light text-white">
-                Окончание РЭУ<br>
-                им. Плеханова 🧑‍🎓
-            </p>
+            <v-tooltip :open-on-hover="false" :open-on-click="true" color="rgba(255,255,255, 0.2)" max-width="400" z-index="50" top>
+                <template v-slot:activator="{ on, attrs }">
+                <div v-bind="attrs" v-on="on" class="relative">
+                    <p class="text-3xl m-auto text-center font-weight-light italic text-white">31 Декабря<br>2020г.</p>
+                    <svg class="absolute z-10" style="top: 30px;left: -13px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
+                    </svg>
+                    <p class="text-5xl text-center font-weight-light text-white">
+                        Окончание РЭУ<br>
+                        им. Плеханова 🧑‍🎓
+                    </p>
+                </div>
+                </template>
+                <img
+                        class=""
+                        src="https://lh3.googleusercontent.com/pw/ACtC-3eSi5v959slKYLj09ypJ8hKal9P4FBMzWi2g_Jv8FbPJNQ2oe_VuGsCORWqo_3qlrmTYfky6WsgY9zSKAS2o-m44tbozsU0-RDgAfiHIhRdzc2MT7wn5WIWw6JTVcqRAsOTkveoRsaAmmqZPuuaQxfS=w1324-h1764-no?authuser=0"
+                        alt=""
+                >
+            </v-tooltip>
         </div>
         <div class="absolute z-20 transition-fast event17" style="opacity: 0;" v-scroll="handleScrollElement" id="event17">
             <div class="relative">
@@ -363,17 +462,26 @@
             </p>
         </div>
         <div class="absolute z-20 transition-fast event18" style="opacity: 0;" v-scroll="handleScrollElement" id="event18">
-            <div class="relative">
-                <p class="text-3xl m-auto text-center font-weight-light italic text-white">Март<br>2021г.</p>
-                <svg class="absolute z-10" style="top: 30px;right: 15px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
-                </svg>
-            </div>
-            <p class="text-5xl text-center font-weight-light text-white">
-                Совместная с мамой жениха<br>
-                зимняя поездка на Кавказ🏔
+            <v-tooltip :open-on-hover="false" :open-on-click="true" color="rgba(255,255,255, 0.2)" max-width="400" z-index="50" top>
+                <template v-slot:activator="{ on, attrs }">
+                    <div v-bind="attrs" v-on="on" class="relative">
+                        <p class="text-3xl m-auto text-center font-weight-light italic text-white">Март<br>2021г.</p>
+                        <svg class="absolute z-10" style="top: 30px;right: 15px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
+                        </svg>
+                        <p class="text-5xl text-center font-weight-light text-white">
+                            Совместная с мамой жениха<br>
+                            зимняя поездка на Кавказ🏔
 
-            </p>
+                        </p>
+                    </div>
+                </template>
+                <img
+                        class=""
+                        src="https://lh3.googleusercontent.com/pw/ACtC-3dnE10KsJrOuQLCxJE_cKjgq59ar_g2VKLEd4a-Kvp4dEiwnyEuDDbqEdZxMzGVlhCM9cXILKdCADl-CliFlgXMp-O2lHT3rWJku2EKVRBOsNr8CV-K8x9yvdg-9k8agxmn0VODBCRltEz0VkP8D92X=w2352-h1764-no?authuser=0"
+                        alt=""
+                >
+            </v-tooltip>
         </div>
         <div class="absolute z-20 transition-fast event19" style="opacity: 0;" v-scroll="handleScrollElement" id="event19">
             <div class="relative">
@@ -420,6 +528,9 @@
         min-height: 800px;
         text-align: center;
     }
+    .v-tooltip__content.menuable__content__active {
+        opacity: 1!important;
+    }
     .transition-slow {
         transition: 0.5s;
     }
@@ -441,7 +552,7 @@
     }
     .event6{
         top: 570px;
-        right: 150px;
+        right: 170px;
     }
     .event7 {
         top: 950px;

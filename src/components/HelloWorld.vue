@@ -33,7 +33,9 @@
                     },
                 ],
                 guests: {},
-                daysLeft: ''
+                timerText: '',
+                daysLeft: '',
+                dayName: ''
             }
         },
 
@@ -80,12 +82,14 @@
                 else if (dd === 2 || dd === 3 || dd === 4) dayname = " дня";
                 else dayname = " дней";
                 if (daysLeft < 0) {
-                    this.daysLeft = "Это чудестное событие уже произошло!)"
+                    this.timerText = "Урааа, это чудестное событие уже произошло! 🥳"
                 } else {
                     if (daysLeft === 0) {
-                        this.daysLeft = "Завтра свадьба!!! 🥳"
+                        this.timerText = "Завтра свадьба!!! 🥳"
                     } else {
-                        this.daysLeft = "До особенного дня осталось " + daysLeft + dayname + "!!! 💒";
+                        this.timerText = "До особенного дня осталось:";
+                        this.daysLeft = daysLeft;
+                        this.dayName = dayname;
                     }
                 }
             }
@@ -145,12 +149,12 @@
     <div class="overflow-hidden">
   <v-container class="pt-24 xl:pt-48">
       <section class="flex flex-col xl:flex-row align-middle wrapper">
-        <h1 class="text-center hidden xl:block font-weight-light m-auto w-1/2 align-middle" style="font-size: 72px;line-height: 84px;color:#6B483C; background-color: transparent!important;letter-spacing: 12px;">
+        <h1 class="text-center hidden xl:block font-weight-light m-auto w-1/2 align-middle main-heading">
           Денис<br>
             &<br>
             Диана
         </h1>
-          <h1 class="text-center block xl:hidden font-weight-light m-auto align-middle pb-12" style="font-size: 72px;color:#6B483C; background-color: transparent!important;">
+          <h1 class="text-center block xl:hidden font-weight-light m-auto align-middle pb-12 main-heading">
               Денис & Диана
           </h1>
           <v-carousel
@@ -183,18 +187,34 @@
       <section style="justify-content: end" class="flex flex-column videoWrapper align-middle">
           <video muted="muted" autoplay="autoplay" loop src="../assets/CrimeaAerial.mp4"> </video>
           <h3 class="text-2xl sm:text-3xl xl:text-6xl text-center text-white font-weight-light z-30 crimea-heading">Почему Крым?</h3>
-          <div class="text-opacity grid grid-flow-row md:grid-flow-col md:grid-cols-2 md:gap-32 crimea-second-block">
-              <p class="text-xs sm:text-2xl xl:text-2xl text-justify text-white font-weight-light z-30">
-                  Ю́жный бе́рег Кры́ма — одна из важнейших и наиболее популярных в бывшем СССР приморских зон курортного лечения, отдыха и туризма; включает города-курорты Алупка, Ялта, Алушта, Судак и многочисленные курортные посёлки и курортные местности.
-              </p>
-              <p class="text-xs sm:text-2xl xl:text-2xl text-justify text-white font-weight-light z-30 crimea-second-text">
-                  Ю́жный бе́рег Кры́ма — одна из важнейших и наиболее популярных в бывшем СССР приморских зон курортного лечения, отдыха и туризма; включает города-курорты Алупка, Ялта, Алушта, Судак и многочисленные курортные посёлки и курортные местности.
+          <div class="text-opacity grid grid-flow-row md:grid-flow-col md:grid-cols-1 crimea-second-block">
+              <p class="text-justify text-white hidden md:block font-weight-light crimea-text z-30">
+                  Крым - прекрасный, солнечный полуостров. С нереально красивым видами, с приятным климатом и с чистым и теплым морем. Это позволяет всем гостям не просто лететь к нам на праздник, а выбрать Крым в качестве локации для отпуска в этом году и совместить его с нашим праздником, что будет менее накладно как в финансовом плане, так и по времени.
+                  <br><br>Дата мероприятия также подобрана таким образом, чтоб было удобно гостям, которые зависят от учебного процесса (они смогут отдохнуть в Крыму в конце августа, посетить наш праздник и всего на пару дней задержаться от привычного режима), и тем гостям, которые могут отдыхать в удобное для них время (такие гости смогут провести прекрасное начало сентября в Крыму, когда гостей на полуострове явно меньше, чем летом, цены ниже, а погода все еще теплая, солнечная и приятная).
               </p>
           </div>
       </section>
+        <section style="justify-content: end" class="flex flex-column align-middle">
+            <p class="text-justify text-white font-weight-light block md:hidden mx-12 sm:my-6 my-12 crimea-text z-30">
+                Крым - прекрасный, солнечный полуостров. С нереально красивым видами, с приятным климатом и с чистым и теплым морем. Это позволяет всем гостям не просто лететь к нам на праздник, а выбрать Крым в качестве локации для отпуска в этом году и совместить его с нашим праздником, что будет менее накладно как в финансовом плане, так и по времени.
+                <br><br>Дата мероприятия также подобрана таким образом, чтоб было удобно гостям, которые зависят от учебного процесса (они смогут отдохнуть в Крыму в конце августа, посетить наш праздник и всего на пару дней задержаться от привычного режима), и тем гостям, которые могут отдыхать в удобное для них время (такие гости смогут провести прекрасное начало сентября в Крыму, когда гостей на полуострове явно меньше, чем летом, цены ниже, а погода все еще теплая, солнечная и приятная).
+            </p>
+        </section>
     <v-container>
-      <section class="flex flex-row justify-center align-middle pt-16" id="timer">
-            <h3 class="text-2xl sm:text-3xl xl:text-6xl text-center text-white font-weight-light">{{ daysLeft }}</h3>
+      <section class="flex flex-column justify-center align-middle pt-16" id="timer">
+            <h3 class="text-2xl sm:text-3xl sm:text-6xl mb-6 text-center text-white font-weight-light">{{ timerText }}</h3>
+          <div style="width: fit-content;" class="relative m-auto">
+              <svg style="width: 240px;height: 240px; margin: auto" width="240" height="240" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.09265 9.40427H20.9166" stroke="#6B483C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M16.0437 2V5.29078" stroke="#6B483C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.96552 2V5.29078" stroke="#6B483C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M16.2383 3.57919H7.77096C4.83427 3.57919 3 5.21513 3 8.22222V17.2719C3 20.3262 4.83427 22 7.77096 22H16.229C19.175 22 21 20.3546 21 17.3475V8.22222C21.0092 5.21513 19.1842 3.57919 16.2383 3.57919Z" stroke="#6B483C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <div v-if="daysLeft > 1" class="timer-position absolute">
+                  <p class="text-6xl mb-0 text-center text-white font-weight-light timer-position">{{ daysLeft }}</p>
+                  <p class="text-xl text-center text-white font-weight-light timer-position">{{ dayName }}</p>
+              </div>
+          </div>
       </section>
       <section class="flex flex-row justify-center align-middle pt-24">
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfHv_IqtKxUhyZHPG4DwSIIA8u2OH9RXZAp8TnfTiJBvYNOhw/viewform?embedded=true" width="640" height="1000" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe>
@@ -232,12 +252,17 @@
         height: 0;
     }
     .videoWrapper video {
-        position: absolute;
-        filter: opacity(0.6);
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
+        position: absolute;
+        @media screen and (min-width: 767px) {
+            filter: opacity(0.4);
+        }
+        @media screen and (max-width: 767px) {
+            filter: opacity(0.8);
+        }
     }
 
     .crimea-second-block{
@@ -250,9 +275,24 @@
         margin: auto 1rem;
     }
 
-    .crimea-second-text {
-        @media screen and (max-width: 462px) {
-            display: none;
+    .crimea-text {
+        font-size: 1.7rem;
+        line-height: 50px;
+        @media screen and (min-width: 991px) and (max-width: 1212px) {
+            font-size: 1.3rem;
+            line-height: 40px;
+        }
+        @media screen  and (min-width: 767px) and (max-width: 991px) {
+            font-size: 1rem;
+            line-height: 30px;
+        }
+        @media screen and (min-width: 411px) and (max-width: 767px) {
+            font-size: 1.5rem;
+            line-height: 30px;
+        }
+        @media screen and (max-width: 411px) {
+            font-size: 1rem;
+            line-height: 28px;
         }
     }
 
@@ -290,8 +330,24 @@
         }
     }
 
-    @media screen and (min-width: 1412px) {
+    .timer-position {
+        top: 45%;
+        left: 28%;
+    }
 
+    .main-heading {
+        color:#6B483C;
+        background-color: transparent!important;
+        @media screen and (min-width: 511px) {
+            font-size: 72px;
+            line-height: 84px;
+            letter-spacing: 12px;
+        }
+        @media screen and (max-width: 514px) {
+            font-size: 42px;
+            line-height: 54px;
+            letter-spacing: 8px;
+        }
     }
 
     @media screen and (max-width: 1412px) {
