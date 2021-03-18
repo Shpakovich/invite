@@ -4,13 +4,22 @@
 
         data () {
             return {
-                heightLine: 2000
+                heightLine: 2000,
+                absolute: true,
+                opacity: 0.5,
+                overlay: false,
+                srcOverlay: '',
+                imageArray: [
+                    'https://lh3.googleusercontent.com/pw/ACtC-3f6r6_e0P3wQuMPHWeNwh9QGB_DhlmbiMQy99YmXnuS4ZSKimkLwNFJneRLwjW-2cti0EHIkE9DCQhyRC5BQRbpYtEXm1jyGryJMwJDO5USMcpMn_0Us3bROfrFfRs-UXuP1nufCAxGSsr9JDtMtGUv=w1280-h853-no?authuser=0',
+                    '',
+                    'https://lh3.googleusercontent.com/pw/ACtC-3fBeVEs5n6QK64O6IzcIT1NH16PlyU5uCiwej5zazn6a8PRPNixC94vGwGxqNRkvAynXdHx7ipgzxnpQ-1SpDKND5S-JB_tCZEZECFe99RTiaa7TA4cXIyzGf2L_kLh1NBMVj9_5TBURzVtpNXeMvBE=w1280-h960-no?authuser=0'
+                ]
             }
         },
 
         mounted() {
             this.scrollingMap();
-            var scrollableElement = document.body; //document.getElementById('scrollableElement');
+            /*var scrollableElement = document.body; //document.getElementById('scrollableElement');
             scrollableElement.addEventListener('wheel', checkScrollDirection);
 
             function checkScrollDirection(event) {
@@ -23,19 +32,38 @@
                     element.classList.add("airplane-down");
                     element.classList.remove("airplane-up");
                 }
-            }
-
-            function checkScrollDirectionIsUp(event) {
+                function checkScrollDirectionIsUp(event) {
                 if (event.wheelDelta) {
                     return event.wheelDelta > 0;
                 }
                 return event.deltaY < 0;
             }
+            }*/
+
+            // Initial state
+            let scrollPos = 0;
+            // adding scroll event
+            window.addEventListener('scroll', function() {
+                // detects new state and compares it with the new one
+                if ((document.body.getBoundingClientRect()).top > scrollPos) {
+                    const element = document.getElementById('airplane');
+                    element.classList.add("airplane-up");
+                    element.classList.remove("airplane-down");
+                } else {
+                    const element = document.getElementById('airplane');
+                    element.classList.add("airplane-down");
+                    element.classList.remove("airplane-up");
+                }
+                // saves the new position for iteration.
+                scrollPos = (document.body.getBoundingClientRect()).top;
+            });
+        },
+
+        computed:{
         },
 
 
         methods: {
-
             handleScrollElement : function () {
                 let id;
                 const scrollY = window.scrollY;
@@ -134,6 +162,10 @@
                             'style',
                             `opacity: 0;`)
                     }
+            },
+            openImage(eventNumber){
+                this.overlay = !this.overlay;
+                this.srcOverlay = this.imageArray[eventNumber];
             }
         }
     }
@@ -203,14 +235,14 @@
             </svg>-->
         </div>
         <section class="flex flex-column justify-center align-middle relative text-indent" id="roadmap-text">
-            <div class="z-20 transition-fast text-block" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event1">
+            <div @click="openImage(0)" class="z-20 transition-fast text-block" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event1">
                 <p class="text-3xl m-auto text-center font-weight-light italic text-white">1 Сенября 2017г.</p>
                 <p class="text-2xl m-auto text-center font-weight-light text-white">
                     Знакомство — Церковь ⛪️
                     Рэу им. Плеханова
                 </p>
             </div>
-            <div class=" z-20 transition-fast text-block" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event2">
+            <div @click="openImage(1)" class=" z-20 transition-fast text-block" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event2">
                 <div class="relative">
                     <p class="text-3xl m-auto text-center font-weight-light italic text-white">5 Ноября 2017.</p>
                 </div>
@@ -219,14 +251,14 @@
                     Нежка 👩‍❤️‍👨
                 </p>
             </div>
-            <div class=" z-20 transition-fast text-block" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event4">
+            <div @click="openImage(2)" class=" z-20 transition-fast text-block" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event4">
                 <p class="text-3xl m-auto text-center font-weight-light italic text-white">1 Января 2018г.</p>
                 <p class="text-2xl text-center font-weight-light text-white">
                     Первый совместный
                     Новый Год — Реутов🎄
                 </p>
             </div>
-            <div class=" z-20 transition-fast text-block" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event5">
+            <div @click="openImage(3)" class=" z-20 transition-fast text-block" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event5">
                 <div class="relative">
                     <p class="text-3xl m-auto text-center font-weight-light italic text-white">14 Февраля<br>2018г.</p>
                 </div>
@@ -234,7 +266,7 @@
                     Сюрприз в лифте — ЦДМ🍿
                 </p>
             </div>
-            <div class="z-20 transition-fast text-block mobile-event6" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event6">
+            <div @click="openImage(4)" class="z-20 transition-fast text-block mobile-event6" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event6">
                 <div class="relative">
                     <p class="text-3xl m-auto text-center font-weight-light italic text-white">25 Марта<br>2018г.</p>
                 </div>
@@ -242,7 +274,7 @@
                     Прекрасный Город<br>— Питер 🚂
                 </p>
             </div>
-            <div class="z-20 transition-fast text-block mobile-event7" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event7">
+            <div @click="openImage(5)" class="z-20 transition-fast text-block mobile-event7" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event7">
                 <div class="relative">
                     <p class="text-3xl m-auto text-center font-weight-light italic text-white">27 Мая<br>2018г.</p>
                 </div>
@@ -251,7 +283,7 @@
                     КД Лесное🐎
                 </p>
             </div>
-            <div class="z-20 transition-fast text-block mobile-event8" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event8">
+            <div @click="openImage(6)" class="z-20 transition-fast text-block mobile-event8" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event8">
                 <div class="relative">
                     <p class="text-3xl m-auto text-center font-weight-light italic text-white">Июль<br>2018г.</p>
                 </div>
@@ -260,7 +292,7 @@
                     поездка — Анапа 🏖
                 </p>
             </div>
-            <div class="z-20 transition-fast text-block mobile-event9" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event9">
+            <div @click="openImage(7)" class="z-20 transition-fast text-block mobile-event9" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event9">
                 <div class="relative">
                     <p class="text-3xl m-auto text-center font-weight-light italic text-white">Август<br>2018г.</p>
                 </div>
@@ -352,7 +384,7 @@
             </div>
             <div class="z-20 transition-fast text-block mobile-event19" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event19">
                 <div class="relative">
-                    <p class="text-3xl m-auto text-center font-weight-light italic text-white">Март<br>2021г.</p>
+                    <p class="text-3xl m-auto text-center font-weight-light italic text-white">14 Февраля<br>2021г.</p>
                 </div>
                 <p class="text-2xl text-center font-weight-light text-white">
                     День влюблённых<br>в снегу 🏂
@@ -368,6 +400,29 @@
                 <div class="beach-image transition-fast absolute" style="opacity: 0;" v-scroll="scrollingMap" id="beach"></div>
             </div>
         </section>
+        <v-overlay
+                :absolute="absolute"
+                :opacity="opacity"
+                :value="overlay"
+                class="px-4"
+                style="position: fixed; width: 100%; height: 100%; z-index: 200"
+        >
+            <v-btn
+                    color="#6B483C"
+                    style="position: absolute; top: -70px; right: 20px"
+                    @click="overlay = false"
+            >
+                <v-icon dark>
+                    mdi-close
+                </v-icon>
+            </v-btn>
+            <img
+                    id="overlay-image"
+                    class="rounded-md"
+                    :src='srcOverlay'
+                    alt=""
+            >
+        </v-overlay>
     </div>
 </template>
 
