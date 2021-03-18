@@ -165,12 +165,6 @@
 
                         // When complete, remove the dash array, otherwise shape isn't quite sharp
                         // Accounts for fuzzy math
-                        if (scrollPercentage >= 0.99) {
-                            path.style.strokeDasharray = "none";
-
-                        } else {
-                            path.style.strokeDasharray = pathLength + ' ' + pathLength;
-                        }
 
                     });
             }
@@ -279,7 +273,7 @@
                     <p class="text-3xl m-auto text-center font-weight-light italic text-white">25 Марта<br>2018г.</p>
                 </div>
                 <p class="text-2xl text-center font-weight-light text-white">
-                    День Рождения в подарок — МЛР🎂
+                    Прекрасный Город<br>— Питер 🚂
                 </p>
             </div>
             <div class="z-20 transition-fast text-block mobile-event7" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event7">
@@ -395,7 +389,7 @@
                     <p class="text-3xl m-auto text-center font-weight-light italic text-white">Март<br>2021г.</p>
                 </div>
                 <p class="text-2xl text-center font-weight-light text-white">
-                    Решение по месту и дате свадьбы 💒
+                    День влюблённых<br>в снегу 🏂
                 </p>
             </div>
             <div class="z-20 transition-fast text-block mobile-event20" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event20">
