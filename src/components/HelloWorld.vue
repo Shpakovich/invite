@@ -65,6 +65,12 @@
         },
 
         methods: {
+            setControls(){
+                const videoElement = document.getElementById("video");
+                if(document.documentElement.clientWidth <= 800){
+                    videoElement.setAttribute('controls', 'controls');
+                }
+            },
             daysLeftNewYear() {
                 const today = new Date();
                 const nextDate = new Date("September 1, 2021");
@@ -185,7 +191,7 @@
       </section>
   </v-container>
       <section style="justify-content: end" class="flex flex-column videoWrapper align-middle">
-          <video muted="muted" autoplay="autoplay" loop src="../assets/CrimeaAerial.mp4"> </video>
+          <video v-scroll="setControls" id="video" muted="muted" autoplay="autoplay" loop src="../assets/CrimeaAerial.mp4"> </video>
           <h3 class="text-2xl sm:text-3xl xl:text-6xl text-center text-white font-weight-light z-30 crimea-heading">Почему Крым?</h3>
           <div class="text-opacity grid grid-flow-row md:grid-flow-col md:grid-cols-1 crimea-second-block">
               <p class="text-justify text-white hidden md:block font-weight-light crimea-text z-30">
@@ -195,7 +201,7 @@
           </div>
       </section>
         <section style="justify-content: end" class="flex flex-column align-middle">
-            <p class="text-justify text-white font-weight-light block md:hidden mx-12 sm:my-6 my-12 crimea-text z-30">
+            <p class="text-center text-white font-weight-light block md:hidden mx-6 sm:mx-12 mt-12 crimea-text z-30">
                 Крым - прекрасный, солнечный полуостров. С нереально красивым видами, с приятным климатом и с чистым и теплым морем. Это позволяет всем гостям не просто лететь к нам на праздник, а выбрать Крым в качестве локации для отпуска в этом году и совместить его с нашим праздником, что будет менее накладно как в финансовом плане, так и по времени.
                 <br><br>Дата мероприятия также подобрана таким образом, чтоб было удобно гостям, которые зависят от учебного процесса (они смогут отдохнуть в Крыму в конце августа, посетить наш праздник и всего на пару дней задержаться от привычного режима), и тем гостям, которые могут отдыхать в удобное для них время (такие гости смогут провести прекрасное начало сентября в Крыму, когда гостей на полуострове явно меньше, чем летом, цены ниже, а погода все еще теплая, солнечная и приятная).
             </p>

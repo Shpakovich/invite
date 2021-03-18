@@ -10,10 +10,32 @@
 
         mounted() {
             this.scrollingMap();
+            var scrollableElement = document.body; //document.getElementById('scrollableElement');
+            scrollableElement.addEventListener('wheel', checkScrollDirection);
+
+            function checkScrollDirection(event) {
+                if (checkScrollDirectionIsUp(event)) {
+                    const element = document.getElementById('airplane');
+                    element.classList.add("airplane-up");
+                    element.classList.remove("airplane-down");
+                } else {
+                    const element = document.getElementById('airplane');
+                    element.classList.add("airplane-down");
+                    element.classList.remove("airplane-up");
+                }
+            }
+
+            function checkScrollDirectionIsUp(event) {
+                if (event.wheelDelta) {
+                    return event.wheelDelta > 0;
+                }
+                return event.deltaY < 0;
+            }
         },
 
 
         methods: {
+
             handleScrollElement : function () {
                 let id;
                 const scrollY = window.scrollY;
@@ -89,96 +111,40 @@
                     )
                 }
             },
-            scrollingMap () {
-                const elementDraw = document.getElementById('roadmap-text');
-                this.heightLine = elementDraw.clientHeight;
-                console.log(this.heightLine);
-                    // Get a reference to the <path>
-                    var path = document.querySelector('#line-path');
-
-                    // Get length of path... ~577px in this case
-                    var pathLength = path.getTotalLength();
-
-                    // Make very long dashes (the length of the path itself)
-                    path.style.strokeDasharray = pathLength + ' ' + pathLength;
-
-                    // Offset the dashes so the it appears hidden entirely
-                    path.style.strokeDashoffset = pathLength;
-
-                    // Jake Archibald says so
-                    // https://jakearchibald.com/2013/animated-line-drawing-svg/
-                    path.getBoundingClientRect();
-
-                    // When the page scrolls...
-                    window.addEventListener("scroll", function() {
-
-                        var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-
-                        // Length to offset the dashes
-                        const elementDraw = document.getElementById('roadmap-text');
-                        let length = elementDraw.clientHeight;
-                        //let length = 4500;
-                        let drawLength;
-                        const scrollY = window.scrollY;
-
-                        switch (true){
-                            case scrollY < 1800:
-                                drawLength = length * (scrollPercentage - 1.5);
-                                break;
-                            case scrollY >= 1800 && scrollY <= 2000:
-                                drawLength = length * (scrollPercentage - 1.1);
-                                break;
-                            case scrollY >= 2000 && scrollY <= 3200:
-                                drawLength = length * (scrollPercentage - 0.1);
-                                break;
-                            case scrollY <= 3200:
-                                drawLength = length * (scrollPercentage - 0.08);
-                                break;
-                            /*case  scrollY >= 1300 && scrollY <= 1400:
-                                drawLength = length * (scrollPercentage + 0.12);
-                                break;
-                            case  scrollY >= 1400 && scrollY <= 1500:
-                                drawLength = length * (scrollPercentage + 0.18);
-                                break;
-                            case scrollY >= 1500 && scrollY <= 1700:
-                                drawLength = length * (scrollPercentage + 0.22);
-                                break;
-                            case scrollY >= 1700 && scrollY <= 1800:
-                                drawLength = length * (scrollPercentage + 0.25);
-                                break;
-                            case scrollY >= 1800 && scrollY <= 1900:
-                                drawLength = length * (scrollPercentage + 0.30);
-                                break;
-                            case scrollY >= 1900 && scrollY <= 2300:
-                                drawLength = length * (scrollPercentage + 0.36);
-                                break;
-                            case scrollY >= 2300:
-                                drawLength = length * (scrollPercentage + 0.46);
-                                break;*/
-
-                            default:
-                                drawLength = length * (scrollPercentage);
-                        }
-
-                        // Draw in reverse
-                        path.style.strokeDashoffset = pathLength - drawLength;
-
-                        // When complete, remove the dash array, otherwise shape isn't quite sharp
-                        // Accounts for fuzzy math
-
-                    });
+            scrollingMap: function () {
+                const elementDraw = document.getElementById('draw-line-height');
+                let length = elementDraw.clientHeight + 500;
+                // When the page scrolls...
+                const elementAirplane = document.getElementById('airplane');
+                const elementBeach = document.getElementById('beach');
+                    if (length >= window.scrollY && window.scrollY >= 500) {
+                        elementAirplane.setAttribute(
+                            'style',
+                            `top: ${window.scrollY-600}px`
+                        )
+                    }
+                    if (length <= window.scrollY) {
+                        elementAirplane.classList.add("nol-opatity");
+                        elementBeach.setAttribute(
+                            'style',
+                            `opacity: 1; transform: translate3d(0, -10px, 0)`)
+                    } else {
+                        elementAirplane.classList.remove("nol-opatity");
+                        elementBeach.setAttribute(
+                            'style',
+                            `opacity: 0;`)
+                    }
             }
         }
     }
 </script>
 
 <template>
-    <div class="draw-line-height mt-16">
-        <div style="position: relative" class="rele">
-            <svg id="line-svg" width="5" :height="heightLine"  viewBox="0 0 5 2637" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line class="transition-fast" id="line-path" x1="2.5" y1="-2.12817e-07" x2="2.50022" y2="2637" stroke="#6B483C" stroke-width="5"/>
-            </svg>
-            <svg style="top: 0;left: -2px" class="m-auto absolute circle-svg" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div class="draw-line-height mt-16" id="draw-line-height">
+        <div class="w-1/6" style="position: relative">
+
+            <div class="airplane transition-fast" style="transform: rotate(180deg);" v-scroll="scrollingMap" id="airplane"></div>
+            <!--<svg style="top: 0;left: -2px" class="m-auto absolute circle-svg" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
             </svg>
             <svg  style="top: 155px; left: -2px;" class="absolute z-10 circle-svg" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -234,7 +200,7 @@
             </svg>
             <svg class="absolute z-10 circle-svg" style="top: 3540px;left: -2px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
-            </svg>
+            </svg>-->
         </div>
         <section class="flex flex-column justify-center align-middle relative text-indent" id="roadmap-text">
             <div class="z-20 transition-fast text-block" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event1">
@@ -392,13 +358,14 @@
                     День влюблённых<br>в снегу 🏂
                 </p>
             </div>
-            <div class="z-20 transition-fast text-block mobile-event20" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event20">
+            <div class="z-20 transition-fast text-block mobile-event20 relative" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event20">
                 <p class="text-2xl text-center font-weight-light text-white">
                     Крым - последняя точка Карты начала нашей любви ❤️
                 </p>
                 <div class="relative">
                     <p class="text-xl m-auto text-center font-weight-light italic text-white">1 Сентября<br>2021г.</p>
                 </div>
+                <div class="beach-image transition-fast absolute" style="opacity: 0;" v-scroll="scrollingMap" id="beach"></div>
             </div>
         </section>
     </div>
@@ -409,6 +376,67 @@
         width: 10%;
         min-width: 50px;
     }
+
+    .nol-opatity {
+        opacity: 0;
+    }
+
+    .airplane-up {
+        transform: rotate(0deg);
+    }
+
+    .airplane-down {
+        transform: rotate(180deg);
+    }
+
+    .airplane {
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDUxMS45OTIgNTExLjk5MiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTExLjk5MiA1MTEuOTkyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8cG9seWdvbiBzdHlsZT0iZmlsbDojRjVGN0ZBOyIgcG9pbnRzPSIyNTcuOTk1LDM2Ny4zMSAxNTkuMzMzLDQyOS4zMDggMTU5LjMzMyw0NjguNjg0IDIxNC42NjcsNDUxLjk5NiAyOTEuMzM4LDQ0OS45OTYgDQoJCTM1MS4zMzcsNDY1Ljk5NiAzNTEuMzM3LDQyOS4zMDggCSIvPg0KCTxwb2x5Z29uIHN0eWxlPSJmaWxsOiNGNUY3RkE7IiBwb2ludHM9IjI5OS45OTQsMTgyLjQ5NCAxOTkuNDk2LDE4OS40OTMgMTEsMjgzLjUgMTUuNDk5LDMyOS40OTggMjU1Ljk5NSwyODYgNTA0Ljk5LDMyOS40OTggDQoJCTUwNC45OSwyODYgCSIvPg0KPC9nPg0KPHBvbHlnb24gc3R5bGU9ImZpbGw6IzRGQzJFOTsiIHBvaW50cz0iMjkxLjk5NCw2NC4wMjcgMjc1LjMzOSwzNy4zNTYgMjQ5LjMzMSwzNC4wMjggMjMxLjMzMSw0Ni42ODQgMjE0LjY2Nyw4Ni42ODMgDQoJMjIzLjUwMyw0NjguNjg0IDI4Ny41MSw0NjguNjg0IDI5Ni42NjYsMTE3LjM1NCAiLz4NCjxnPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiMwODA4MDg7IiBkPSJNMjg2LjgyMyw5Mi4yMjljLTAuNDY5LTEuMjM0LTIuMzc1LTUuNTkzLTcuMjk3LTkuNzM0Yy00LjI1LTMuNTYyLTExLjg2Ny03LjgyOC0yNC4wMTYtNy44MjgNCgkJYy0xOS40NzYsMC0yOC44NDMsMTEuMDQ3LTMxLjMxMiwxNy41NjJjLTIuMDg2LDUuNTE2LDAuNjk1LDExLjY3Miw2LjIwMywxMy43NWM1LjM1OSwyLjAxNiwxMS4zMjgtMC41NDcsMTMuNTctNS43NjYNCgkJYzAuMzc1LTAuNjU2LDIuODItNC4yMTksMTEuNTM5LTQuMjE5YzguNzExLDAsMTEuMTU2LDMuNTYyLDExLjUzOSw0LjIxOWMxLjcxOSw0LDUuNjMzLDYuNDUzLDkuNzg5LDYuNDUzDQoJCWMxLjI1LDAsMi41MzEtMC4yMTksMy43ODEtMC42ODhDMjg2LjEyLDEwMy45MDEsMjg4LjksOTcuNzQ1LDI4Ni44MjMsOTIuMjI5eiIvPg0KCTxwYXRoIHN0eWxlPSJmaWxsOiMwODA4MDg7IiBkPSJNNTA2LjE0NiwyNzguNWwtNDcuNDk5LTI0LjEwMnYtNi4wNjJjMC01LjkwNi00Ljc2Ni0xMC42NzItMTAuNjU2LTEwLjY3Mg0KCQljLTQuMzU5LDAtOC4xMDksMi42MDktOS43NSw2LjM1OWwtNDMuNTkzLTIyLjA5M3YtNS41YzAtNS44NzUtNC43NjYtMTAuNjU2LTEwLjY1NS0xMC42NTZjLTQuMTg4LDAtNy43ODEsMi40MDYtOS41MzEsNS45MDYNCgkJbC02Ny42NzEtMzQuMzEyYzEuMjAzLTQzLjEyNCwyLjA0Ny03NS4yOCwyLjA0Ny04MS4zNzRjMC0xMy4zNDMtNS4wNjItMzEuMDc4LTEyLjg3NS00NS4xNzENCgkJYy0xMC41NjItMTkuMDE1LTI0LjkyOS0yOS40ODQtNDAuNDUyLTI5LjQ4NHMtMjkuODgyLDEwLjQ2OS00MC40NDUsMjkuNDg0Yy03LjgyOCwxNC4wOTMtMTIuODksMzEuODI4LTEyLjg5LDQ1LjE3MQ0KCQljMCw2LjEyNSwwLjg1MiwzOC41LDIuMDcsODEuODQybC02Ni43MSwzMy44NDNjLTEuNzUtMy41LTUuMzU5LTUuOTA2LTkuNTM5LTUuOTA2Yy01Ljg5MSwwLTEwLjY2NCw0Ljc4MS0xMC42NjQsMTAuNjU2djUuNQ0KCQlsLTQzLjU3NywyMi4wOTNjLTEuNjU2LTMuNzUtNS4zOTgtNi4zNTktOS43NTgtNi4zNTljLTUuODksMC0xMC42NjQsNC43NjYtMTAuNjY0LDEwLjY3MnY2LjA2Mkw1Ljg0NCwyNzguNQ0KCQlDMi4yNTgsMjgwLjMxMiwwLDI4My45NjksMCwyODh2NDIuNjU0YzAsMy4yMTksMS40NDUsNi4yNSwzLjkzOCw4LjI4MWMxLjkxNCwxLjU2Miw0LjI5NywyLjQwNiw2LjcyNywyLjQwNg0KCQljMC43MjcsMCwxLjQ1My0wLjA5NCwyLjE3MS0wLjIxOWwxOTQuOTU4LTQwLjU2MWMwLjgwNSwyNy4zMTEsMS42MDIsNTQuMTIzLDIuMzIsNzguMDYxbC01Ni4yMjYsMzkuMzExDQoJCWMtMi44NTksMS45NjktNC41NTUsNS4yNS00LjU1NSw4LjcxOXY0Mi42ODhjMCwzLjQzOCwxLjY1Niw2LjY1Niw0LjQ1Myw4LjY1NmMxLjgzNiwxLjMxMiw0LjAwOCwyLDYuMjExLDINCgkJYzEuMTQ4LDAsMi4zMDUtMC4xODgsMy40MjktMC41NjJsNDkuMjEtMTYuNjg4YzAuMTA5LDMuNTk0LDAuMTgsNS45NjksMC4yMTEsNi45MDZjMC4xNzIsNS43NSw0Ljg5OCwxMC4zNDQsMTAuNjY0LDEwLjM0NGgyMS4zMzUNCgkJbDAsMGMwLDUuOTA2LDQuNzczLDEwLjY1NiwxMC42NjQsMTAuNjU2YzUuODkxLDAsMTAuNjY0LTQuNzUsMTAuNjY0LTEwLjY1NmwwLDBoMjEuMzM1YzUuNzY2LDAsMTAuNDg0LTQuNTk0LDEwLjY3Mi0xMC4zNDQNCgkJYzAuMDE2LTAuOTY5LDAuMDk0LTMuNDY5LDAuMjE5LTcuMjVsNTAuMTU1LDE3LjAzMWMxLjEyNSwwLjM3NSwyLjI4MSwwLjU2MiwzLjQzOCwwLjU2MmMyLjIwMywwLDQuMzc1LTAuNjg4LDYuMjE5LTINCgkJYzIuNzgxLTIsNC40MzgtNS4yMTksNC40MzgtOC42NTZ2LTQyLjY4OGMwLTMuNDY5LTEuNjg4LTYuNzUtNC41NDctOC43MTlsLTU3LjE3MS0zOS45OThjMC43MDMtMjMuODEyLDEuNS01MC40MzgsMi4yOTctNzcuNTYxDQoJCWwxOTUuOTE4LDQwLjc0OGMwLjcxOSwwLjEyNSwxLjQ1MywwLjIxOSwyLjE4OCwwLjIxOWMyLjQyMiwwLDQuODEyLTAuODQ0LDYuNzE5LTIuNDA2YzIuNS0yLjAzMSwzLjkzOC01LjA2MiwzLjkzOC04LjI4MVYyODgNCgkJQzUxMS45OSwyODMuOTY5LDUwOS43NCwyODAuMzEyLDUwNi4xNDYsMjc4LjV6IE0zNDEuMzM3LDQzMi4yMTV2MjIuMjE5bC00MS4zNDMtMTRsMS4wNjItMzYuMzczTDM0MS4zMzcsNDMyLjIxNXogTTIxLjMzNSwzMTcuNTYNCgkJdi0yMi45OThMMjA0LjkxLDIwMS40M2MwLjY5NSwyNC4yOTYsMS40NjksNTAuODQzLDIuMjUsNzcuNDc2TDIxLjMzNSwzMTcuNTZ6IE0xNzAuNjYxLDQ1NC40MzR2LTIyLjIxOWw0MC4yMTgtMjguMTIzDQoJCWMwLjQxNCwxMy45MDQsMC43ODEsMjYuMjE3LDEuMDg2LDM2LjM0MkwxNzAuNjYxLDQ1NC40MzR6IE0yNjYuMTc1LDQ1OC42NTJ2LTUzLjMxMWMwLTUuOTA2LTQuNzczLTEwLjY4OC0xMC42NjQtMTAuNjg4DQoJCXMtMTAuNjY0LDQuNzgxLTEwLjY2NCwxMC42ODh2NTMuMzExaC0xMC45ODRjLTAuMDk0LTIuOTM4LTAuMjAzLTYuNDY5LTAuMzItMTAuNWMwLTAuMTU2LDAuMDA4LTAuMzEyLDAuMDA4LTAuNDY5bC0xLjg2Ny02My45OTgNCgkJYy0wLjAxNi0wLjQwNi0wLjA1NS0wLjgxMi0wLjEwOS0xLjIxOWMtMy4xNTYtMTA1LjY1NC04LjA2Mi0yNzIuMTktOC4wNjItMjg2LjQ3MmMwLTE4LjAxNSwxNC40ODQtNTMuMzI3LDMyLTUzLjMyNw0KCQlzMzEuOTk5LDM1LjMxMiwzMS45OTksNTMuMzI3YzAsMTguODc1LTguNTc3LDMwNC4zMTUtMTAuMzU4LDM2Mi42NTdMMjY2LjE3NSw0NTguNjUyTDI2Ni4xNzUsNDU4LjY1MnogTTQ5MC42NDYsMzE3LjU2DQoJCWwtMTg2Ljc3Ny0zOC44NDJjMC43ODEtMjYuNzU4LDEuNTYyLTUzLjQxNCwyLjI1LTc3Ljc4OGwxODQuNTI3LDkzLjYzMlYzMTcuNTZ6Ii8+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==") no-repeat;
+        z-index: 22;
+        @media screen and (min-width: 1030px) and (max-width: 1412px) {
+            width: 250px;
+            height: 250px;
+            left: 50px;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1030px) {
+            width: 150px;
+            height: 150px;
+            left: 55px;
+        }
+        @media screen and (min-width: 768px) and (max-width: 768px) {
+            width: 100px;
+            height: 100px;
+            left: 20px;
+        }
+    }
+
+    .beach-image {
+        position: absolute;
+        background: url("https://img.icons8.com/clouds/2x/beach.png") no-repeat;
+        background-size: contain;
+        z-index: 22;
+        @media screen and (min-width: 1030px) and (max-width: 1412px) {
+            width: 250px;
+            height: 250px;
+            left: -150px;
+            top: -75px;
+        }
+        @media screen and (min-width: 768px) and (max-width: 1030px) {
+            width: 150px;
+            height: 150px;
+            left: -150px;
+            top: -75px;
+        }
+        @media screen and (max-width: 768px) {
+            width: 120px;
+            height: 120px;
+            left: -70px;
+            top: 55px;
+        }
+    }
+
 
     .transition-slow {
         transition: 0.5s;
