@@ -431,11 +431,15 @@
                     mdi-close
                 </v-icon>
             </v-btn>
+            <!--<div
+                    class="rounded-md"
+                    style="top:0;width: 100%; height: 100%;background-color: lightgray; z-index: -1"
+            ></div>-->
             <img
                     id="overlay-image"
                     class="rounded-md"
                     :src='srcOverlay'
-                    style="max-height: 600px;"
+                    style="max-height: 600px; min-height: 300px;min-width: 100%"
                     alt=""
             >
         </v-overlay>

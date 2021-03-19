@@ -3,7 +3,7 @@
     import SmallRoadMap from './SmallRoadMap';
 
     export default {
-        name: 'HelloWorld',
+        name: 'MainPage',
 
         components: {
             RoadMap,
@@ -14,23 +14,32 @@
             return {
                 items: [
                     {
-                        src: 'https://sun9-74.userapi.com/impf/e_2iJ3cFyVqUrSpRAbJYQSQzSy7lObINcyRV4A/BXulRkg-H6E.jpg?size=1620x2160&quality=96&sign=19960dff0519831b30fbbb38cd324097&type=album',
-                    },
-                    {
+                        src: 'https://sun9-66.userapi.com/impf/O_91laMoFPgeaP4enZF53WwP0v0HmYUmntO-TQ/Cgn34v4_mo4.jpg?size=842x818&quality=96&sign=77af61e4f60d7db14417e0e2a25f62f4&type=album',
+                    }, {
                         src: 'https://sun9-76.userapi.com/impf/SH_7k-NhEJOedCgiJN8XXj5AXECd3c2cUWd1yw/GtrW2KHOdJo.jpg?size=960x1280&quality=96&sign=6fd5e5cb1c546055265b65c598090d5a&type=album',
-                    },
-                    {
-                        src: 'https://sun9-45.userapi.com/impf/TWInnZv7pa6oqLb4oi6NEZImT8NBwYtyl4CBuQ/Kf1OL8QtqJE.jpg?size=2560x1920&quality=96&sign=bd8ff0c67a78270ef41d6ae8e4fedd0b&type=album',
-                    },
-                    {
-                        src: 'https://sun9-32.userapi.com/impf/suxRsIk_8_uLh4uUyelaBIKxhJg6ixNwKR7WWQ/p1EWB-q14N8.jpg?size=1620x2160&quality=96&sign=31889a9087a8c65a39341ad62e16d6bc&type=album',
-                    },
-                    {
+                    }, {
+                        src: 'https://sun9-74.userapi.com/impf/e_2iJ3cFyVqUrSpRAbJYQSQzSy7lObINcyRV4A/BXulRkg-H6E.jpg?size=1620x2160&quality=96&sign=19960dff0519831b30fbbb38cd324097&type=album',
+                    }, {
+                        src: 'https://sun9-30.userapi.com/impf/BBrACmPNLTT4U15Oc05xfIz3WxF9G-PT-uCiOQ/3DwaHvfzHSE.jpg?size=1421x2021&quality=96&sign=fd0d73364c01e30bb86a77a179e57c4a&type=album',
+                    }, {
                         src: 'https://sun9-57.userapi.com/impf/0Irbti5NXdSguXWr_a8RdEisqvZj_XxSdQgNLg/LrT2J-uDUW4.jpg?size=1024x768&quality=96&sign=450247ef71845da051b0f444192ba5b4&type=album',
-                    },
-                    {
+                    }, {
+                        src: 'https://lh3.googleusercontent.com/pw/ACtC-3dGhhiQLUpSRRuC57M2I2AuaCRi9wtd0DFLsymXuqJ5DRwBBdAUFuG8UHam4VgyFqcSxmb7sd_uueYb4f3GYxc6RA-VUBOhc8AS36CSq-P7Es3RHr3A7mCkmx93MoqVGM1Q3OJhCMHA_5Z07zsUYLIW=w1322-h1762-no',
+                    }, {
                         src: 'https://sun9-10.userapi.com/impf/33QeLQXiSkCGHnXxFK3F3Zab1TWGD9K0HTPdvg/CGHquEzWZIw.jpg?size=2560x1920&quality=96&sign=7af8fa6f8700b2277d05f85f8b447962&type=album',
-                    },
+                    }, {
+                        src: 'https://lh3.googleusercontent.com/pw/ACtC-3fim-x8IUkLwO8oFd_bgAdRtx427zGoMdfGvW1U0a8HIOiE9fFCEiQXTweS7TONZK7Y8cVbIU6-JFHN_frI7HcexTLXdN9EAoNcX9998woQEd3b3Jf0UzZ8K_a3H5QCexkwTFO2C-JYubKA8HdMCIA=w1322-h1762-no',
+                    }, {
+                        src: 'https://sun9-32.userapi.com/impf/suxRsIk_8_uLh4uUyelaBIKxhJg6ixNwKR7WWQ/p1EWB-q14N8.jpg?size=1620x2160&quality=96&sign=31889a9087a8c65a39341ad62e16d6bc&type=album',
+                    }, {
+                        src: 'https://sun9-75.userapi.com/impf/cKUviRhC_BS-hd46DBTSxxgQif42EzhiYpqHYg/tt7VF6b-Rkc.jpg?size=960x1280&quality=96&sign=5057afece05dda7268e8f08ca5bfea38&type=album',
+                    }, {
+                        src: 'https://lh3.googleusercontent.com/pw/ACtC-3c8j0Y7oo5tsyTPVmZFaJpWYFf5ws3xYQzj9FHDsqHn_TlX4kuE3HAXXLjs9iS0UQX-eURJ1COI7mzAh6b21NsBacRj8VVwOlf74D45vH23y8H6PpVhe4xQB4_I5tBVTKfpXkbftXv09ON83ZDsvifQ=w959-h720-no',
+                    }, {
+                        src: 'https://lh3.googleusercontent.com/pw/ACtC-3dPUR-cNBnvYJ00OX38W4qhdMlU2rmPUB5UVPxTpmhScaJnR8wVL7CcQh90IRRqYSkbeuc7F97qefC6mcrUnImQZMnJcYlm3l8XfAGltrc7X1amy5OlhjIMUdu0bVDdCzbRp26WJfh--VTGhd7OO98p=w2350-h1762-no',
+                    }, {
+                        src: 'https://lh3.googleusercontent.com/pw/ACtC-3dMJ7qwsYN0AhDn5b6qH81yrrE95ZoHvGMYWB8dORhIax0PD8fn9x6XSnvE1RqsM2kGQBxl_w3JkyEVcknFqtaEhHkHdQXAK1kbDxVh89ZgS5NFSoxkMPIwhlNWAqA6MNg01nzdfgUYEwT7TAvAJUZm=w2350-h1762-no',
+                    }
                 ],
                 guests: {},
                 timerText: '',
@@ -179,11 +188,11 @@
           </h1>
           <v-carousel
                   class="w-full xl:w-1/2 rounded-2xl photo-carousel"
-                      cycle
-                      height="640"
-                      hide-delimiter-background
-                    hide-delimiters
-                      show-arrows-on-hover
+                  height="640"
+                  cycle
+                  hide-delimiter-background
+                  hide-delimiters
+                  show-arrows-on-hover
               >
                       <v-carousel-item
                               v-for="(item,i) in items"
@@ -210,7 +219,7 @@
           <div class="text-opacity grid grid-flow-row md:grid-flow-col md:grid-cols-1 crimea-second-block">
               <p class="text-justify text-white hidden md:block font-weight-light crimea-text z-30">
                   Крым - чудесное место. Нереально красивые виды, приятный климат, чистое и тёплое море! Нам кажется, что это даст возможность не только побывать на нашем празднике, но и прекрасно провести свой отпуск.
-                  <br><br>Дату мы тоже постарались подобрать, чтобы это было удобно для каждого гостя. Те, кто зависят от учебного процесса, смогут и отдохнуть в августе, и посетить наш праздник, и при этом совсем ненадолго выйдут из привычного режима. А те, у кого есть время, смогут задержаться в Крыму, где сентябрь - бархатный сезон (цены ниже летних, приезжих меньше, а погода приятнее).
+                  <br><br>Дату мы тоже постарались подобрать, чтобы это было удобно для каждого гостя. Те, кто зависит от учебного процесса, смогут и отдохнуть в августе, и посетить наш праздник, и при этом совсем ненадолго выйдут из привычного режима. А те, у кого есть время, смогут задержаться в Крыму, где сентябрь - бархатный сезон (цены ниже летних, приезжих меньше, а погода приятнее).
                   <br>Мы очень ждём вас и надеемся, что радостно и комфортно будет всем!
               </p>
           </div>
@@ -218,7 +227,7 @@
         <section style="justify-content: end" class="flex flex-column align-middle">
             <p class="text-center text-white font-weight-light block md:hidden mx-6 sm:mx-12 mt-12 crimea-text z-30">
                 Крым - чудесное место. Нереально красивые виды, приятный климат, чистое и тёплое море! Нам кажется, что это даст возможность не только побывать на нашем празднике, но и прекрасно провести свой отпуск.
-                <br><br>Дату мы тоже постарались подобрать, чтобы это было удобно для каждого гостя. Те, кто зависят от учебного процесса, смогут и отдохнуть в августе, и посетить наш праздник, и при этом совсем ненадолго выйдут из привычного режима. А те, у кого есть время, смогут задержаться в Крыму, где сентябрь - бархатный сезон (цены ниже летних, приезжих меньше, а погода приятнее).
+                <br><br>Дату мы тоже постарались подобрать, чтобы это было удобно для каждого гостя. Те, кто зависит от учебного процесса, смогут и отдохнуть в августе, и посетить наш праздник, и при этом совсем ненадолго выйдут из привычного режима. А те, у кого есть время, смогут задержаться в Крыму, где сентябрь - бархатный сезон (цены ниже летних, приезжих меньше, а погода приятнее).
                 <br>Мы очень ждём вас и надеемся, что радостно и комфортно будет всем!
             </p>
         </section>
@@ -254,6 +263,9 @@
     .photo-carousel {
         max-width: 720px!important;
         margin: auto;
+        @media screen and (max-width: 511px) {
+            height: 480px!important;
+        }
     }
 
     .wrapper {
