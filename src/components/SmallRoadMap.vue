@@ -12,7 +12,22 @@
                 imageArray: [
                     'https://lh3.googleusercontent.com/pw/ACtC-3f6r6_e0P3wQuMPHWeNwh9QGB_DhlmbiMQy99YmXnuS4ZSKimkLwNFJneRLwjW-2cti0EHIkE9DCQhyRC5BQRbpYtEXm1jyGryJMwJDO5USMcpMn_0Us3bROfrFfRs-UXuP1nufCAxGSsr9JDtMtGUv=w1280-h853-no?authuser=0',
                     '',
-                    'https://lh3.googleusercontent.com/pw/ACtC-3fBeVEs5n6QK64O6IzcIT1NH16PlyU5uCiwej5zazn6a8PRPNixC94vGwGxqNRkvAynXdHx7ipgzxnpQ-1SpDKND5S-JB_tCZEZECFe99RTiaa7TA4cXIyzGf2L_kLh1NBMVj9_5TBURzVtpNXeMvBE=w1280-h960-no?authuser=0'
+                    'https://lh3.googleusercontent.com/pw/ACtC-3fBeVEs5n6QK64O6IzcIT1NH16PlyU5uCiwej5zazn6a8PRPNixC94vGwGxqNRkvAynXdHx7ipgzxnpQ-1SpDKND5S-JB_tCZEZECFe99RTiaa7TA4cXIyzGf2L_kLh1NBMVj9_5TBURzVtpNXeMvBE=w1280-h960-no?authuser=0',
+                    'https://lh3.googleusercontent.com/pw/ACtC-3cgbDoE23fDwgzDtxcS2haeODZ29C4OeBgt9kR7aBccbLaZofwHudAvIoTeknCxL1BahggfxfZnII19DR7_7vxNG8AgDaV5riBXjAX53aexyP6F023hDkXqAllKhxYVupJKBOETqMcPoZeWjoyiabNj=w828-h1029-no?authuser=0',
+                    'https://lh3.googleusercontent.com/pw/ACtC-3fcmB0LV8aEpqIkHA8xRWs7m5ct9Ce0j2sOcPipLIoVG0TV46M7MLaxplXWFuMRTc96ySUQ2z04i5WN6gUdi4cbV0aP1zGBeuWRNuYRqpTFJBshtE5PXsHaIf5SbigT-OHdOm0R_Vd5CTokqUJn7c4=w2352-h1764-no?authuser=0',
+                    'https://lh3.googleusercontent.com/pw/ACtC-3e9MweheRMmSB6hzAAHPiS13z6umjmHEWsQZz1ObZkWe0nC-H1S_GZrl8jVq2hjwYS76xIr3MRLLhm_TVJOvsbbOeJG9em9kC6Sl9QuJa8pOhUeHGiLDkGg1aUWbAiZ70elLOL8lEhObO52PF_0ScA=w960-h1280-no?authuser=0',
+                    'https://lh3.googleusercontent.com/pw/ACtC-3e6To7PuHdA-ISjjpGKe0VvaOdjNA3N2DDBZs9oJ3pV-Wu71iiX9qzyyubWKeP8626DTQTt92SqfRZoIDPbbn5yHGqFGbMDaICZL_lgKH8qW15bVCg8ERUrQCVCrYFSivxzmoOhSVmy7EPy4lTAkKM=w1330-h1772-no?authuser=0',
+                    'https://lh3.googleusercontent.com/pw/ACtC-3dn1cvK9NY023_Ihjvpjyz9bpUyHXY7pHsSC9VY85cQCf4g_0hf7IQsY1jW4wGsl6Oi8dfELUW0vX3f2HXlE8z3xiMHrveBWJY88Cmdu142KCHxBH9H9kNkXyd8Tv48b2cEAKKU318MHWZTRxkXzlQ=w1330-h1772-no?authuser=0',
+                    'https://lh3.googleusercontent.com/pw/ACtC-3dJBHiqTOJUjVEpOdUCczqcgePSbl-hsDQN8J86gWmYZfoX1svjHwBcCh0l6jh17xMArEFYRl2YuCQRI28BFZbrGWdlF4UrnjwqGz6D35uGUEhdxY5jmrlI3HpN1btK7pJKepihKYDjlDr_gGFQZeA=w2364-h1772-no?authuser=0',
+                    'https://lh3.googleusercontent.com/pw/ACtC-3f9Yc1YtRZfzQ9vLmrqYowhrKhWm13lLYy6oezMGG7-O8RvNmLgYhRhhDRyGjs6i14n5tRKmg12OWU8_s6Da7_Imiu8YvTAVnJ70oN8wimdy5Na2Frj48KV4u0WH0N1rUyjIasNOu3EBo3_oi_3H80z=w1330-h1772-no?authuser=0',
+                    'https://lh3.googleusercontent.com/pw/ACtC-3fqT0E3F9WInZbdo9fakpwV4WszhU9V8BPGLP23a8Ig6ej3OQXPfCUw6zzEG12fqFUP05HALHA5FmKboREpaYQ4NB1usGXuvtKGquT8TEZk7hQvwQDcMvMf8Yn3pCAAeXENyQ6CCLzzfxXYD19cRWM=w960-h721-no?authuser=0',
+                    'https://lh3.googleusercontent.com/pw/ACtC-3fvwRsUtBtyBTRJaVoJ-DDd4fHQntKy3BY8J5eedoD76l5hom31sq09Rt1u3gHzNowsg8ntTXlVkOZ8eUtwLPFJG3osPjT7tSwU-jR7kc4KsE0Ex7uHtHP1laugP6z_6-JY5FZGgcMfcNr1-ujBuX30=w1324-h1764-no?authuser=0',
+                    'https://lh3.googleusercontent.com/pw/ACtC-3feRlZl2lVrSnv67lHaqLGlfQ2kGQO-TY_VcpTO-fbvM_aURQdLPsvNm9L7qjopm8WJ_Qa2Yff9waALfglVXKAzsJAjKIV4M6lBMLJkXtZ1C1kUMbGHJ2Gwj467Ct5qVrNMN6JyQ3s4SekER0SV4cMW=w2352-h1764-no?authuser=0',
+                    'https://lh3.googleusercontent.com/pw/ACtC-3e6pdY12ANedwfuUcMExz4W-gPjg_ER6ALECFxysQdxvfzcWyAiaNQbwhFi8p2H3VPoBX57RnIaDhRbRIV-qoRdnAd35wNqgVH3aDX63AF7kfZD95mkf03wx_8zcVsbc7NWglZpt_ZRHnHMBDAp28M1=w720-h1280-no?authuser=0',
+                    'https://lh3.googleusercontent.com/pw/ACtC-3eSi5v959slKYLj09ypJ8hKal9P4FBMzWi2g_Jv8FbPJNQ2oe_VuGsCORWqo_3qlrmTYfky6WsgY9zSKAS2o-m44tbozsU0-RDgAfiHIhRdzc2MT7wn5WIWw6JTVcqRAsOTkveoRsaAmmqZPuuaQxfS=w1324-h1764-no?authuser=0',
+                    'https://lh3.googleusercontent.com/pw/ACtC-3cGrjeGqeR6m3YQVPSuJF83HFSBIpZoHqWUx8Pi_KGCw1wiwhLzSJBG2vlKE3ka17gKOsGjTVa_2TbLhgJwQR_u1UzsuSa5X2Z2124FnO_ReLGy5G20A0FpWDzqOJVqKkDkDv7q27D03NHlnhnPtTNZ=w627-h836-no?authuser=0',
+                    'https://lh3.googleusercontent.com/pw/ACtC-3dnE10KsJrOuQLCxJE_cKjgq59ar_g2VKLEd4a-Kvp4dEiwnyEuDDbqEdZxMzGVlhCM9cXILKdCADl-CliFlgXMp-O2lHT3rWJku2EKVRBOsNr8CV-K8x9yvdg-9k8agxmn0VODBCRltEz0VkP8D92X=w2352-h1764-no?authuser=0',
+                    'https://lh3.googleusercontent.com/pw/ACtC-3fLuHAcHZtw0Y3EgQio3Kt9BtbXHEnMaSsKE12P0xvvEeFpei36KWiLeARBhLu8uzqIIWgUe5Bh8E68bGoXqTW2cMZVlm8tMTpk01JXs7AujSUDeBVBqB323IrIWpRJ5pxnUiiJuO4bjECSS5c3Tr_H=w2352-h1764-no?authuser=0'
                 ]
             }
         },
@@ -301,7 +316,7 @@
                     Калининград 🏰
                 </p>
             </div>
-            <div class="z-20 transition-fast text-block mobile-event10" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event10">
+            <div  @click="openImage(8)" class="z-20 transition-fast text-block mobile-event10" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event10">
                 <div class="relative">
                     <p class="text-3xl m-auto text-center font-weight-light italic text-white">5 Ноября<br>2018г.</p>
                 </div>
@@ -310,7 +325,7 @@
                     далеко, но рядом🥂
                 </p>
             </div>
-            <div class="z-20 transition-fast text-block  mobile-event11" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event11">
+            <div  @click="openImage(9)" class="z-20 transition-fast text-block  mobile-event11" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event11">
                 <div class="relative">
                     <p class="text-3xl m-auto text-center font-weight-light italic text-white">27 Апреля<br>2019г.</p>
                 </div>
@@ -319,7 +334,7 @@
                     невесты — "Карлсон" 🤗
                 </p>
             </div>
-            <div class="z-20 transition-fast text-block mobile-event12" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event12">
+            <div  @click="openImage(10)" class="z-20 transition-fast text-block mobile-event12" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event12">
                 <div class="relative">
                     <p class="text-3xl m-auto text-center font-weight-light italic text-white">25 Мая<br>2019г.</p>
                 </div>
@@ -328,7 +343,7 @@
                     жизни — А.Янгеля 🏠
                 </p>
             </div>
-            <div class="z-20 transition-fast text-block mobile-event13" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event13">
+            <div  @click="openImage(11)" class="z-20 transition-fast text-block mobile-event13" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event13">
                 <div class="relative">
                     <p class="text-3xl m-auto text-center font-weight-light italic text-white">29 Декабря<br>2019г.</p>
                 </div>
@@ -337,7 +352,7 @@
                     во Владивостоке 🌉
                 </p>
             </div>
-            <div class="z-20 transition-fast text-block mobile-event14" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event14">
+            <div  @click="openImage(12)" class="z-20 transition-fast text-block mobile-event14" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event14">
                 <div class="relative">
                     <p class="text-3xl m-auto text-center font-weight-light italic text-white">31 Декабря<br>2019г.</p>
                 </div>
@@ -345,7 +360,7 @@
                     Новый Год в кругу семьи невесты — Владивосток 🎄
                 </p>
             </div>
-            <div class="z-20 transition-fast text-block mobile-event15" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event15">
+            <div  @click="openImage(13)" class="z-20 transition-fast text-block mobile-event15" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event15">
                 <div class="relative">
                     <p class="text-3xl m-auto text-center font-weight-light italic text-white">26 мая<br>2020г.</p>
                 </div>
@@ -354,7 +369,7 @@
                     руки и сердца 💍
                 </p>
             </div>
-            <div class="z-20 transition-fast text-block mobile-event16" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event16">
+            <div  @click="openImage(14)" class="z-20 transition-fast text-block mobile-event16" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event16">
                 <div class="relative">
                     <p class="text-3xl m-auto text-center font-weight-light italic text-white">31 Декабря<br>2020г.</p>
                 </div>
@@ -363,7 +378,7 @@
                     им. Плеханова 🧑‍🎓
                 </p>
             </div>
-            <div class="z-20 transition-fast text-block mobile-event17" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event17">
+            <div  @click="openImage(15)" class="z-20 transition-fast text-block mobile-event17" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event17">
                 <div class="relative">
                     <p class="text-3xl m-auto text-center font-weight-light italic text-white">23 Сентября<br>2020г.</p>
                 </div>
@@ -372,7 +387,7 @@
                     — М.Белоруская 👩🏼‍💻
                 </p>
             </div>
-            <div class="z-20 transition-fast text-block mobile-event18" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event18">
+            <div  @click="openImage(16)" class="z-20 transition-fast text-block mobile-event18" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event18">
                 <div class="relative">
                     <p class="text-3xl m-auto text-center font-weight-light italic text-white">Ноябрь<br>2020г.</p>
                 </div>
@@ -382,7 +397,7 @@
 
                 </p>
             </div>
-            <div class="z-20 transition-fast text-block mobile-event19" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event19">
+            <div  @click="openImage(17)" class="z-20 transition-fast text-block mobile-event19" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event19">
                 <div class="relative">
                     <p class="text-3xl m-auto text-center font-weight-light italic text-white">14 Февраля<br>2021г.</p>
                 </div>
@@ -404,7 +419,7 @@
                 :absolute="absolute"
                 :opacity="opacity"
                 :value="overlay"
-                class="px-4"
+                class="px-4 pt-4 flex flex-column justify-center pb-6"
                 style="position: fixed; width: 100%; height: 100%; z-index: 200"
         >
             <v-btn
@@ -420,6 +435,7 @@
                     id="overlay-image"
                     class="rounded-md"
                     :src='srcOverlay'
+                    style="max-height: 600px;"
                     alt=""
             >
         </v-overlay>
