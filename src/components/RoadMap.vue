@@ -193,16 +193,25 @@
             >
         </v-tooltip>
         <div class="absolute z-20 transition-fast event2" style="opacity: 0; visibility: hidden;" v-scroll="handleScrollElement" id="event2">
-            <div class="relative">
-                <p class="text-3xl m-auto text-center font-weight-light italic text-white">5 Ноября 2017.</p>
-                <svg class="absolute z-10" style="top: 105px; right: 490px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
-                </svg>
-            </div>
-            <p class="text-5xl text-center font-weight-light text-white">
-                Начало отношений —<br>
-                Нежка 👩‍❤️‍👨
-            </p>
+            <v-tooltip   color="rgba(255,255,255, 0.2)" max-width="400" z-index="50" top>
+                <template v-slot:activator="{ on, attrs }">
+                    <div v-bind="attrs" v-on="on" class="relative">
+                        <p class="text-3xl m-auto text-center font-weight-light italic text-white">5 Ноября 2017.</p>
+                        <svg class="absolute z-10" style="top: 105px; right: 490px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
+                        </svg>
+                        <p class="text-5xl text-center font-weight-light text-white">
+                            Начало отношений —<br>
+                            Нежка 👩‍❤️‍👨
+                        </p>
+                     </div>
+                </template>
+                <img
+                        class=""
+                        src="https://lh3.googleusercontent.com/pw/ACtC-3dXEq904g1gPQ39e6VR4W0Llza8WzubA7sokblUdpkk-fYlqjhm40_rNtdNGzzT0nLKuCgixXYzsOPIs73ncGC0fBMJBqYxFzBS20EhLlJC7jr4f2VsVw-wCwBiDOBopc_ThFxMjDajPxFP1RIv87do=w1322-h1762-no"
+                        alt=""
+                >
+            </v-tooltip>
         </div>
         <div class="absolute z-20 transition-fast event4" style="opacity: 0; visibility: hidden;" v-scroll="handleScrollElement" id="event4">
             <v-tooltip   color="rgba(255,255,255, 0.2)" max-width="400" z-index="50" top>

@@ -114,14 +114,18 @@
                 if (this.guests?.surname1) {
                     if (this.guests?.name3) {
                         appeal = appeal + this.guests.name1 + ' ' + this.guests.surname1 + ',';
-                    } else {
+                    } else if ( !this.guests?.name3 && this.guests?.name2 ) {
                         appeal = appeal + this.guests.name1 + ' ' + this.guests.surname1 + ' и';
+                    } else {
+                        appeal = appeal + this.guests.name1 + ' ' + this.guests.surname1 + ',';
                     }
                 } else {
                     if (this.guests?.name3) {
                         appeal= appeal + this.guests.name1 + ',';
-                    } else {
+                    } else if ( !this.guests?.name3 && this.guests?.name2 ) {
                         appeal= appeal + this.guests.name1 + ' и';
+                    } else {
+                        appeal = appeal + this.guests.name1 + ',';
                     }
                 }
 
@@ -139,7 +143,7 @@
 
                 if (this.guests?.surname4) {
                     appeal= appeal + ' ' + this.guests.name4 + ' ' + this.guests.surname4 + ',';
-                } else if (this.guests.name3) {
+                } else if (this.guests.name4) {
                     appeal= appeal + ' ' + this.guests.name4 + ',';
                 }
 
