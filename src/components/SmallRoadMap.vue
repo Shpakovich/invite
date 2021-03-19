@@ -254,7 +254,7 @@
                 <p class="text-3xl m-auto text-center font-weight-light italic text-white">1 Сенября 2017г.</p>
                 <p class="text-2xl m-auto text-center font-weight-light text-white">
                     Знакомство — Церковь ⛪️
-                    Рэу им. Плеханова
+                    РЭУ им. Плеханова
                 </p>
             </div>
             <div @click="openImage(1)" class=" z-20 transition-fast text-block" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event2">
@@ -286,7 +286,7 @@
                     <p class="text-3xl m-auto text-center font-weight-light italic text-white">25 Марта<br>2018г.</p>
                 </div>
                 <p class="text-2xl text-center font-weight-light text-white">
-                    Прекрасный Город<br>— Питер 🚂
+                    Прекрасный город<br>— Питер 🚂
                 </p>
             </div>
             <div @click="openImage(5)" class="z-20 transition-fast text-block mobile-event7" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event7">
@@ -384,7 +384,7 @@
                 </div>
                 <p class="text-2xl text-center font-weight-light text-white">
                     Теперь мы коллеги
-                    — М.Белоруская 👩🏼‍💻
+                    — м.Белоруская 👩🏼‍💻
                 </p>
             </div>
             <div  @click="openImage(16)" class="z-20 transition-fast text-block mobile-event18" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event18">

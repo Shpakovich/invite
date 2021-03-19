@@ -179,7 +179,7 @@
                     <p class="text-3xl m-auto text-center font-weight-light italic text-white">1 Сенября 2017г.</p>
                     <p class="text-5xl m-auto text-center font-weight-light text-white">
                         Знакомство — Церковь ⛪️<br>
-                        Рэу им. Плеханова
+                        РЭУ им. Плеханова
                     </p>
                     <svg class="m-auto" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
@@ -263,7 +263,7 @@
                             <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
                         </svg>
                         <p class="text-5xl text-center font-weight-light text-white">
-                            Прекрасный Город<br>— Питер 🚂
+                            Прекрасный город<br>— Питер 🚂
                         </p>
                     </div>
                 </template>
@@ -474,7 +474,7 @@
                     </svg>
                     <p class="text-5xl text-center font-weight-light text-white">
                         Окончание РЭУ<br>
-                        им. Плеханова 🧑‍🎓
+                        им. Плеханова 🎓
                     </p>
                 </div>
                 </template>
@@ -495,7 +495,7 @@
                         </svg>
                         <p class="text-5xl text-center font-weight-light text-white">
                             Теперь мы коллеги<br>
-                            — М.Белоруская 👩🏼‍💻
+                            — м.Белоруская 👩🏼‍💻
                         </p>
                     </div>
                 </template>
