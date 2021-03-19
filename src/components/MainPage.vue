@@ -36,8 +36,6 @@
                     }, {
                         src: 'https://lh3.googleusercontent.com/pw/ACtC-3c8j0Y7oo5tsyTPVmZFaJpWYFf5ws3xYQzj9FHDsqHn_TlX4kuE3HAXXLjs9iS0UQX-eURJ1COI7mzAh6b21NsBacRj8VVwOlf74D45vH23y8H6PpVhe4xQB4_I5tBVTKfpXkbftXv09ON83ZDsvifQ=w959-h720-no',
                     }, {
-                        src: 'https://lh3.googleusercontent.com/pw/ACtC-3dPUR-cNBnvYJ00OX38W4qhdMlU2rmPUB5UVPxTpmhScaJnR8wVL7CcQh90IRRqYSkbeuc7F97qefC6mcrUnImQZMnJcYlm3l8XfAGltrc7X1amy5OlhjIMUdu0bVDdCzbRp26WJfh--VTGhd7OO98p=w2350-h1762-no',
-                    }, {
                         src: 'https://lh3.googleusercontent.com/pw/ACtC-3dMJ7qwsYN0AhDn5b6qH81yrrE95ZoHvGMYWB8dORhIax0PD8fn9x6XSnvE1RqsM2kGQBxl_w3JkyEVcknFqtaEhHkHdQXAK1kbDxVh89ZgS5NFSoxkMPIwhlNWAqA6MNg01nzdfgUYEwT7TAvAJUZm=w2350-h1762-no',
                     }
                 ],
@@ -201,10 +199,11 @@
                       ></v-carousel-item>
               </v-carousel>
       </section>
-      <section class="flex flex-row align-middle pt-24 xl:pt-64 wrapper">
-          <h2 class="text-5xl text-center font-weight-light m-auto" style="color:#6B483C">
+      <section class="flex flex-column align-middle pt-24 xl:pt-64 wrapper">
+          <h2 class="text-5xl text-center mb-4 font-weight-light m-auto" style="color:#6B483C">
               Немного из истории
           </h2>
+          <p class="text-xl text-center text-white font-weight-light m-auto roadmap-text">Пристегните ремни, мы отправляемся в полёт! Не торопитесь, чтобы ничего не упустить. Нажимая на каждое событие, вы увидите фото 📷</p>
       </section>
       <RoadMap class="road-map_block" />
       <SmallRoadMap class="road-map_block-mobile" />
@@ -271,6 +270,13 @@
     .wrapper {
         margin: 0 auto;
         max-width: 1200px;
+    }
+
+    .roadmap-text{
+        display: none;
+        @media screen and (max-width: 1412px) {
+            display: block;
+        }
     }
 
     .road-map_block {
