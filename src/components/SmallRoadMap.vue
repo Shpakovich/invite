@@ -283,7 +283,7 @@
             </div>
             <div @click="openImage(4)" class="z-20 transition-fast text-block mobile-event6" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event6">
                 <div class="relative">
-                    <p class="text-3xl m-auto text-center font-weight-light italic text-white">25 Марта<br>2018г.</p>
+                    <p class="text-3xl m-auto text-center font-weight-light italic text-white">2 Марта<br>2018г.</p>
                 </div>
                 <p class="text-2xl text-center font-weight-light text-white">
                     Прекрасный город<br>— Питер 🚂
@@ -336,7 +336,7 @@
             </div>
             <div  @click="openImage(10)" class="z-20 transition-fast text-block mobile-event12" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event12">
                 <div class="relative">
-                    <p class="text-3xl m-auto text-center font-weight-light italic text-white">25 Мая<br>2019г.</p>
+                    <p class="text-3xl m-auto text-center font-weight-light italic text-white">26 Мая<br>2019г.</p>
                 </div>
                 <p class="text-2xl text-center font-weight-light text-white">
                     Начало совместной
@@ -371,7 +371,7 @@
             </div>
             <div  @click="openImage(14)" class="z-20 transition-fast text-block mobile-event16" style="opacity: 0;" v-scroll="handleScrollElement" id="mobile-event16">
                 <div class="relative">
-                    <p class="text-3xl m-auto text-center font-weight-light italic text-white">31 Декабря<br>2020г.</p>
+                    <p class="text-3xl m-auto text-center font-weight-light italic text-white">Август<br>2020г.</p>
                 </div>
                 <p class="text-2xl text-center font-weight-light text-white">
                     Окончание РЭУ

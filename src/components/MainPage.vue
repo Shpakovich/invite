@@ -194,6 +194,7 @@
           <v-carousel
                   class="w-full xl:w-1/2 rounded-2xl photo-carousel"
                   height="640"
+                  interval="2000"
                   cycle
                   hide-delimiter-background
                   hide-delimiters

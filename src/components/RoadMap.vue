@@ -258,7 +258,7 @@
             <v-tooltip  color="rgba(255,255,255, 0.2)" max-width="400" z-index="50" top>
                 <template v-slot:activator="{ on, attrs }">
                     <div v-bind="attrs" v-on="on" class="relative">
-                        <p class="text-3xl m-auto text-center font-weight-light italic text-white">25 Марта<br>2018г.</p>
+                        <p class="text-3xl m-auto text-center font-weight-light italic text-white">2 Марта<br>2018г.</p>
                         <svg class="absolute z-10" style="top: 190px;left: -13px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
                         </svg>
@@ -383,7 +383,7 @@
             <v-tooltip  color="rgba(255,255,255, 0.2)" max-width="400" z-index="50" top>
                 <template v-slot:activator="{ on, attrs }">
                     <div v-bind="attrs" v-on="on" class="relative">
-                        <p class="text-3xl m-auto text-center font-weight-light italic text-white">25 Мая<br>2019г.</p>
+                        <p class="text-3xl m-auto text-center font-weight-light italic text-white">26 Мая<br>2019г.</p>
                         <svg class="absolute z-10" style="top: 190px;left: 390px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
                         </svg>
@@ -468,7 +468,7 @@
             <v-tooltip  color="rgba(255,255,255, 0.2)" max-width="400" z-index="50" top>
                 <template v-slot:activator="{ on, attrs }">
                 <div v-bind="attrs" v-on="on" class="relative">
-                    <p class="text-3xl m-auto text-center font-weight-light italic text-white">31 Декабря<br>2020г.</p>
+                    <p class="text-3xl m-auto text-center font-weight-light italic text-white">Август<br>2020г.</p>
                     <svg class="absolute z-10" style="top: 30px;left: -13px;" width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="27.5" cy="27.5" r="27.5" fill="#D0B39F"/>
                     </svg>
